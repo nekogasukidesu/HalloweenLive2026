@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REQUEST｜SORARU Halloween LIVE 2026〜Starhallow〜</title>
+<meta name="description" content="そらる ライブ2026『Starhallow / Starveil』衣装アンケート。そらるに着てほしい衣装のアイデアを募集中。">
+<meta property="og:title" content="そらる 衣装アンケート｜SORARU Halloween LIVE 2026">
+<meta property="og:description" content="そらるに着てほしい衣装のアイデアを募集中。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/gate.js"></script>
+<style>
+/* ===== Survey page ===== */
+.survey-main { padding-top: 72px; }
+/* ===== KV ===== */
+.survey-kv {
+  position: relative; height: 44vh; min-height: 300px;
+  background-image: url('../assets/kv/kvday1_lg.jpg');
+  background-size: cover; background-position: center 30%;
+}
+.survey-kv__veil { position: absolute; inset: 0; background: rgba(7,6,13,.45); }
+.survey-kv__content {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 0 1rem;
+}
+.survey-kv__sub { font-family: "Cinzel", serif; letter-spacing: .3em; font-size: .78rem; color: var(--text); opacity: .9; margin-bottom: .8rem; }
+.survey-kv__title {
+  font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500;
+  font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.05;
+  color: var(--d1-gold); text-shadow: 0 0 28px rgba(194,56,47,.7);
+}
+.survey-hero { text-align: center; padding: 72px 0 0; }
+.survey-hero__label {
+  display: inline-block; font-size: .72rem; letter-spacing: .18em; font-weight: 700;
+  padding: .3rem 1.1rem; border-radius: 999px;
+  border: 1px solid var(--d1-gold); color: var(--d1-gold); margin-bottom: 1.2rem;
+}
+.survey__lead { max-width: 640px; margin: 0 auto 40px; text-align: center; font-size: .98rem; }
+.survey__lead strong { color: var(--d1-gold); font-weight: 700; }
+.survey__notes {
+  max-width: 640px; margin: 0 auto 48px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+  padding: 24px 28px; font-size: .85rem; color: var(--text-dim);
+}
+.survey__notes h3 { font-size: .9rem; color: var(--text); letter-spacing: .08em; margin-bottom: .8rem; }
+.survey__notes ul { list-style: none; }
+.survey__notes li { padding-left: 1.1em; text-indent: -1.1em; margin-bottom: .35rem; }
+.survey__notes li::before { content: "・"; }
+.survey__form-wrap {
+  max-width: 760px; margin: 0 auto;
+  background: var(--panel); border: 1px solid rgba(233,179,90,.35); border-radius: 18px;
+  overflow: hidden;
+}
+.survey__form-wrap iframe { display: block; width: 100%; height: 1150px; border: 0; background: transparent; }
+.survey__fallback { text-align: center; margin: 28px auto 0; }
+.survey__btn {
+  display: inline-block; padding: 1rem 3rem; border-radius: 999px; font-weight: 700; letter-spacing: .1em;
+  background: var(--d1-gold); color: #1a0f08;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.survey__btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(233,179,90,.35); }
+.survey__back { text-align: center; margin-top: 56px; }
+.survey__back a { color: var(--text-dim); font-size: .85rem; letter-spacing: .12em; border-bottom: 1px solid var(--line); padding-bottom: 2px; transition: color .25s; }
+.survey__back a:hover { color: var(--text); }
+@media (max-width: 768px) {
+  .survey-hero { padding-top: 56px; }
+  .survey__form-wrap iframe { height: 1250px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Background star trail (canvas) ===== -->
+<canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="../index.html" class="header__logo">SORARU Halloween LIVE 2026</a>
+    <button class="header__toggle" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <ul class="nav__list">
+        <li><a href="../index.html#news" class="nav__link">NEWS</a></li>
+        <li class="nav__item--hidden"><a href="../index.html#goods" class="nav__link">GOODS</a></li>
+        <li><a href="../index.html#schedule" class="nav__link">SCHEDULE</a></li>
+        <li><a href="../index.html#ticket" class="nav__link">TICKET</a></li>
+        <li><a href="./" class="nav__link">REQUEST</a></li>
+        <li><a href="../index.html#notice" class="nav__link">NOTICE</a></li>
+        <li><a href="../index.html#profile" class="nav__link">PROFILE</a></li>
+        <li><a href="../index.html#movie" class="nav__link">MOVIE</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="survey-main">
+
+  <!-- ===== KV ===== -->
+  <div class="survey-kv">
+    <div class="survey-kv__veil"></div>
+    <div class="survey-kv__content">
+      <p class="survey-kv__sub">SORARU Halloween LIVE 2026</p>
+      <h1 class="survey-kv__title">Costume Request</h1>
+    </div>
+  </div>
+
+  <!-- ===== Survey ===== -->
+  <div class="survey-hero">
+    <span class="survey-hero__label">受付終了</span>
+    <h2 class="section__title"><span class="en">REQUEST</span><span class="jp">衣装アンケート</span></h2>
+  </div>
+
+  <section class="section" id="survey">
+    <div class="container">
+      <p class="survey__lead">
+        衣装アンケートへのたくさんのご応募、ありがとうございました。<br>
+        受付は終了しました。お寄せいただいた案の活用については、後日あらためてお知らせします。
+      </p>
+
+      <div class="survey__fallback">
+        <a class="survey__btn" href="report/">最終集計を見る →</a>
+      </div>
+
+      <div class="survey__back">
+        <a href="../index.html">← TOPへ戻る</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <p class="footer__copy">&copy; 2026 SORARU. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

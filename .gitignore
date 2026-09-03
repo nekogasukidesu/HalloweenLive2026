@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+__MACOSX/
+._*
+.fuse_hidden*
+
+# Node (必要に応じて)
+node_modules/
+.npm
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local

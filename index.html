@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SORARU Halloween LIVE 2026〜Starhallow〜｜そらる</title>
+<meta name="description" content="そらる ライブ2026『Starhallow / Starveil』特設サイト。ハロウィンの起源 サウィン祭をベースにした2DAYS。京王アリーナTOKYOにて2026年10月31日・11月1日開催。">
+<meta property="og:title" content="SORARU Halloween LIVE 2026〜Starhallow〜">
+<meta property="og:description" content="ハロウィンの起源 サウィン祭をベースにした2DAYS LIVE">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/gate.js"></script>
+</head>
+<body>
+
+<!-- ===== Background star trail (canvas) ===== -->
+<canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#hero" class="header__logo">SORARU Halloween LIVE 2026</a>
+    <button class="header__toggle" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <ul class="nav__list">
+        <li><a href="#news" class="nav__link">NEWS</a></li>
+        <li class="nav__item--hidden"><a href="#goods" class="nav__link">GOODS</a></li>
+        <li><a href="#schedule" class="nav__link">SCHEDULE</a></li>
+        <li><a href="#ticket" class="nav__link">TICKET</a></li>
+        <li><a href="survey/" class="nav__link">REQUEST</a></li>
+        <li><a href="#notice" class="nav__link">NOTICE</a></li>
+        <li><a href="#profile" class="nav__link">PROFILE</a></li>
+        <li><a href="#movie" class="nav__link">MOVIE</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero (2公演 対比) ===== -->
+<section class="hero" id="hero">
+  <div class="hero__split">
+
+    <!-- DAY1 Starhallow -->
+    <a href="#schedule" class="hero__panel hero__panel--day1" style="background-image:url('assets/kv/kvday1_lg.jpg')">
+      <div class="hero__panel-veil"></div>
+      <div class="hero__panel-content">
+        <span class="hero__panel-day">DAY 1 — 10.31 SAT</span>
+        <h2 class="hero__panel-title"><img src="assets/kv/hero_logo_day1.png" alt="Starhallow" class="hero__panel-logo"></h2>
+      </div>
+    </a>
+
+    <!-- DAY2 Starveil -->
+    <a href="#schedule" class="hero__panel hero__panel--day2" style="background-image:url('assets/kv/kvday2_lg.jpg')">
+      <div class="hero__panel-veil"></div>
+      <div class="hero__panel-content">
+        <span class="hero__panel-day">DAY 2 — 11.01 SUN</span>
+        <h2 class="hero__panel-title"><img src="assets/kv/hero_logo_day2.png" alt="Starveil" class="hero__panel-logo"></h2>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- 中央ロゴ -->
+  <div class="hero__center">
+    <h1 class="hero__title"><img src="assets/kv/logo_main.png" alt="SORARU Halloween LIVE 2026 Starhallow / Starveil" class="hero__logo"></h1>
+    <p class="hero__date">2026.10.31 SAT &amp; 11.01 SUN</p>
+  </div>
+
+  <a href="#news" class="hero__scroll" aria-label="下へスクロール"><span></span></a>
+</section>
+
+<!-- ===== News ===== -->
+<section class="section news" id="news">
+  <div class="container">
+    <h2 class="section__title"><span class="en">NEWS</span><span class="jp">お知らせ</span></h2>
+    <ul class="news__list">
+      <li class="news__item" data-fm-show style="display:none">
+        <time class="news__date">2026.08.25</time>
+        <span class="news__tag">TICKET</span>
+        <p class="news__text">FamilyMart先行受付を開始しました。</p>
+      </li>
+      <li class="news__item">
+        <time class="news__date">2026.08.04</time>
+        <span class="news__tag">REQUEST</span>
+        <p class="news__text"><a href="survey/report/" style="text-decoration:underline;">衣装アンケートの受付を終了しました。最終集計はこちら→</a></p>
+      </li>
+      <li class="news__item">
+        <time class="news__date">2026.07.22</time>
+        <span class="news__tag">INFO</span>
+        <p class="news__text">LIVE 2026『Starhallow / Starveil』の開催が決定しました。</p>
+      </li>
+      <li class="news__item">
+        <time class="news__date">2026.07.22</time>
+        <span class="news__tag">TICKET</span>
+        <p class="news__text">本日20:00より、最速先行受付の券売を開始します。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Survey banner ===== -->
+<section class="section survey-banner" id="survey-banner">
+  <div class="container">
+    <a href="survey/report/" class="survey-banner__box">
+      <span class="survey-banner__label">受付終了</span>
+      <span class="survey-banner__en">COSTUME REQUEST</span>
+      <span class="survey-banner__jp">たくさんのご応募ありがとうございました</span>
+      <span class="survey-banner__btn">最終集計を見る →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== Goods ===== -->
+<section class="section goods" id="goods">
+  <div class="container">
+    <h2 class="section__title"><span class="en">GOODS</span><span class="jp">グッズ</span></h2>
+    <div class="goods__soon">
+      <p class="goods__soon-en">COMING SOON</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Schedule (2公演) ===== -->
+<section class="section schedule" id="schedule">
+  <div class="container">
+    <h2 class="section__title"><span class="en">SCHEDULE</span><span class="jp">公演日程</span></h2>
+
+    <div class="schedule__list">
+      <article class="schedule__card schedule__card--day1">
+        <div class="schedule__kv" style="background-image:url('assets/kv/kvday1_md.jpg')"></div>
+        <div class="schedule__body">
+          <div class="schedule__head">
+            <span class="schedule__day">DAY 1</span>
+            <span class="schedule__concept">Starhallow</span>
+          </div>
+          <h3 class="schedule__venue">京王アリーナTOKYO<small style="display:block;font-size:.62em;font-weight:400;opacity:.75;margin-top:.3em;">〒182-0032 東京都調布市西町290-11</small></h3>
+          <p class="schedule__date">2026.10.31 <span>(土)</span></p>
+          <p class="schedule__time">OPEN 14:00 / START 15:00</p>
+        </div>
+      </article>
+
+      <article class="schedule__card schedule__card--day2">
+        <div class="schedule__kv" style="background-image:url('assets/kv/kvday2_md.jpg')"></div>
+        <div class="schedule__body">
+          <div class="schedule__head">
+            <span class="schedule__day">DAY 2</span>
+            <span class="schedule__concept">Starveil</span>
+          </div>
+          <h3 class="schedule__venue">京王アリーナTOKYO<small style="display:block;font-size:.62em;font-weight:400;opacity:.75;margin-top:.3em;">〒182-0032 東京都調布市西町290-11</small></h3>
+          <p class="schedule__date">2026.11.01 <span>(日)</span></p>
+          <p class="schedule__time">OPEN 14:00 / START 15:00</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Ticket ===== -->
+<section class="section ticket" id="ticket">
+  <div class="container">
+    <h2 class="section__title"><span class="en">TICKET</span><span class="jp">チケット</span></h2>
+
+    <div class="ticket__price">
+      <span class="ticket__price-label">全席指定</span>
+      <span class="ticket__price-value">9,000<small>円(税込)</small></span>
+      <span class="ticket__price-note">レプリカチケット付き</span>
+      <span class="ticket__price-note">※１公演につき、おひとりさま４枚まで</span>
+    </div>
+
+    <div class="ticket__schedule">
+      <h3 class="ticket__sub">券売スケジュール</h3>
+
+      <div class="ticket__phase" data-fm-hide>
+        <h4 class="ticket__phase-title">最速先行受付</h4>
+        <dl class="ticket__dl">
+          <dt>受付期間</dt>
+          <dd>2026/7/22(水) 20:00 〜 8/3(月) 23:59</dd>
+          <dt>当選発表・入金期限</dt>
+          <dd>2026/8/8(土) 15:00 〜 8/14(金) 21:00</dd>
+        </dl>
+      </div>
+
+      <div class="ticket__phase" data-fm-show style="display:none">
+        <h4 class="ticket__phase-title">FamilyMart先行受付</h4>
+        <dl class="ticket__dl">
+          <dt>受付期間</dt>
+          <dd>2026/8/25(火) 18:00 〜 8/31(月) 23:59</dd>
+          <dt>当落・入金期間</dt>
+          <dd>2026/9/5(土) 15:00 〜 9/9(水) 21:00</dd>
+        </dl>
+      </div>
+
+    </div>
+
+    <a href="https://eplus.jp/soraru_halloween2026/saisoku/" target="_blank" rel="noopener noreferrer" class="ticket__btn" data-fm-hide>最速先行受付はこちら（e+）</a>
+    <a href="https://eplus.jp/soraru_halloween2026/fm/" target="_blank" rel="noopener noreferrer" class="ticket__btn" data-fm-show style="display:none">FamilyMart先行受付はこちら（e+）</a>
+  </div>
+</section>
+
+<!-- ===== Notice ===== -->
+<section class="section notice" id="notice">
+  <div class="container">
+    <h2 class="section__title"><span class="en">NOTICE</span><span class="jp">ご注意</span></h2>
+    <div class="notice__box">
+      <h3 class="notice__title">チケットのお申込みに関しての注意事項</h3>
+      <div class="notice__text">
+        <ul class="notice__list">
+          <li>本公演は公演当日の会場規定に基づいた定員での販売を予定しております。</li>
+          <li>本公演のチケットは全てe+スマチケでの発券となります。スマートフォンをお持ちでないと申込むことができません。</li>
+          <li>お申込みは1公演につきおひとり様4枚までとなります。</li>
+          <li>本公演のチケットを1公演につき複数枚ご購入の方は、公演当日スマチケをそれぞれのスマートフォンにダウンロードしてご入場いただく必要がございます。</li>
+          <li>チケットお申込み者および同行者の方は、イープラスの会員登録とe+アプリのダウンロードが必要です。</li>
+          <li>同行者の方がお越しになれなくなった場合は、他の方への譲渡いただけます。譲渡先の方も、イープラスの会員登録とe+アプリのダウンロードが必要です。お申込み者のチケットの譲渡は禁止させていただきます。</li>
+        </ul>
+        <p class="notice__sub">＜イープラス新規会員登録・アプリのダウンロードはこちら（無料）＞<br>
+        <a href="https://member.eplus.jp/register-member" target="_blank" rel="noopener noreferrer" class="notice__link">https://member.eplus.jp/register-member</a></p>
+        <ul class="notice__list">
+          <li>チケットご購入時にご登録いただいたお客さま情報は、必要に応じて公共機関へ提供させていただく可能性がございます。</li>
+          <li>公演当日、お客さまのご都合によりご入場できない場合、チケットの払戻しは一切いたしませんので、あらかじめご了承ください。</li>
+        </ul>
+        <p class="notice__sub">＜チケットに関してのお問合わせ＞<br>
+        イープラスカスタマーセンター　<a href="http://eplus.jp/qa/" target="_blank" rel="noopener noreferrer" class="notice__link">http://eplus.jp/qa/</a></p>
+        <ul class="notice__list">
+          <li>本公演では、金額に関わらず転売チケットでのご入場を固くお断りいたします。チケットを出品された方・購入された方に対し厳重な調査を行った上で、転売チケットに該当する座席番号は無効とし、ご入場することが出来ません。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Profile ===== -->
+<section class="section profile" id="profile">
+  <div class="container">
+    <h2 class="section__title"><span class="en">PROFILE</span><span class="jp">プロフィール</span></h2>
+    <div class="profile__inner">
+      <figure class="profile__img">
+        <img src="assets/profile/soraru_artist.webp" alt="そらる アーティスト写真" loading="lazy">
+      </figure>
+      <div class="profile__body">
+        <h3 class="profile__name">そらる <span>/ soraru</span></h3>
+        <div class="profile__sns">
+          <a href="https://x.com/soraruru" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/soraru_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16ZM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.12-1.38c.66-.66 1.08-1.33 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.12A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84ZM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4Zm6.4-10.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44Z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@soraruYT" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.82 12Z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@soraruru" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.3v13.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-.74-5.08v-3.4a5.9 5.9 0 1 0 6.64 5.85V8.99a7.62 7.62 0 0 0 4.45 1.42V7.1a4.28 4.28 0 0 1-3.41-1.28Z"/></svg>
+          </a>
+          <a href="https://www.nicovideo.jp/user/1796335/mylist/7359936" target="_blank" rel="noopener noreferrer" aria-label="niconico">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.5 6.5h11A1.5 1.5 0 0 1 19 8v6.5a1.5 1.5 0 0 1-1.5 1.5h-2.1l1.9 2.3a.6.6 0 0 1-.46 1H17l-3-3.3-.3-.3H10.3l-.3.3-3 3.3h-.83a.6.6 0 0 1-.46-1l1.9-2.3H6.5A1.5 1.5 0 0 1 5 14.5V8a1.5 1.5 0 0 1 1.5-1.5Z"/></svg>
+          </a>
+        </div>
+        <p class="profile__text">
+          1988年11月3日生まれ。宮城県出身。名前の由来は、空を眺めるのが好きなことから。<br>
+          2008年動画投稿サイトで活動を開始。ネットシーンを中心に活動。動画総再生数は6億再生を突破。楽曲の歌唱のほか、自身で作詞作曲をも手がけるエンジニア。まふまふとのユニット "After the Rain" としても活動を行う。
+        </p>
+
+        <div class="profile__disco">
+          <h4 class="profile__disco-title">Discography</h4>
+          <dl class="profile__disco-list">
+            <dt>2012.06</dt><dd>1stアルバム『そらあい』／オリコン週間ランキング7位</dd>
+            <dt>2015.04</dt><dd>2ndアルバム『夕溜まりのしおり』／オリコン週間ランキング10位</dd>
+            <dt>2016.07</dt><dd>3rdアルバム『ビー玉の中の宇宙』</dd>
+            <dt>2017.11</dt><dd>1st miniアルバム『夢見るたまごの育て方』</dd>
+            <dt>2018.11</dt><dd>1stシングル『銀の祈誓』／TVアニメ「ゴブリンスレイヤー」EDテーマ。オリコン週間ランキング2位</dd>
+            <dt>2019.03</dt><dd>2ndシングル『ユーリカ』／MBS・TBSドラマイズム「ゆうべはお楽しみでしたね」OPテーマ。オリコン週間ランキング3位</dd>
+            <dt>2019.07</dt><dd>4thアルバム『ワンダー』／活動10周年記念アルバム。Billboard JAPAN Top Albums Sales 1位。映画「賭ケグルイ」主題歌『アイフェイクミー』収録</dd>
+            <dt>2021.09</dt><dd>5thアルバム『ゆめをきかせて』／オリコン週間ランキング5位</dd>
+            <dt>2022.10</dt><dd>2nd miniアルバム『創空とメルヒェン讃歌』</dd>
+            <dt>2025.02</dt><dd>6thアルバム『ユメトキ』／TVアニメ「2.5次元の誘惑」第2クールOP主題歌『ツギハギの翼』収録</dd>
+          </dl>
+
+          <h4 class="profile__disco-title">Concert・Stage</h4>
+          <dl class="profile__disco-list">
+            <dt>2017.11</dt><dd>『SORARU LIVE TOUR 2017 夢見るセカイの歩き方』／横浜アリーナを含むツアーで全公演ソールドアウト</dd>
+            <dt>2019.03</dt><dd>『SORARU LIVE TOUR 2019 -10th Anniversary Parade-』／幕張メッセ2Daysを含む全国6大都市ツアー。35,000人を動員、全公演ソールドアウト</dd>
+            <dt>2021.09</dt><dd>4th『SORARU ONLINE & Acoustic LIVE 2021 -ゆめをきかせて-』</dd>
+            <dt>2022</dt><dd>『SORARU LIVE TOUR 2022 -青空とメルヒェン讃歌-』</dd>
+            <dt>2023.01</dt><dd>『SORARU ARENA LIVE 2023 -クリスタリアルスカイ-』</dd>
+            <dt>2024.05</dt><dd>『SORARU LIVE TOUR 2024 -telescope-』／日本武道館2Daysを含む全7公演を敢行</dd>
+            <dt>2024.11</dt><dd>『SORARU Birthday 2024 VOCALOID Cover Live -空祭り-』</dd>
+            <dt>2025.05</dt><dd>『SORARU LIVE TOUR 2025 -ユメユイ-』</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Movie ===== -->
+<section class="section movie" id="movie">
+  <div class="container">
+    <h2 class="section__title"><span class="en">MOVIE</span><span class="jp">ムービー</span></h2>
+    <div class="goods__soon">
+      <p class="goods__soon-en">COMING SOON</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <p class="footer__copy">&copy; 2026 SORARU. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/reveal.js"></script>
+</body>
+</html>

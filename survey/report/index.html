@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REPORT｜衣装アンケート最終集計｜SORARU Halloween LIVE 2026〜Starhallow〜</title>
+<meta name="description" content="そらる ライブ2026『Starhallow / Starveil』衣装アンケートの最終集計。">
+<meta name="robots" content="noindex">
+<!-- OGP -->
+<meta property="og:title" content="衣装アンケート最終集計｜SORARU Halloween LIVE 2026〜Starhallow〜">
+<meta property="og:description" content="「そらるに着てほしい衣装、大募集」に届いたリクエストの最終集計。受付は終了しました。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soraruru.jp/HalloweenLive2026/survey/report/">
+<meta property="og:image" content="https://soraruru.jp/HalloweenLive2026/survey/report/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="衣装アンケート最終集計｜SORARU Halloween LIVE 2026">
+<meta name="twitter:image" content="https://soraruru.jp/HalloweenLive2026/survey/report/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+/* ===== Report page ===== */
+.report-main { padding-top: 72px; --text-dim: #c6bfda; }
+
+/* KV */
+.report-kv {
+  position: relative; height: 34vh; min-height: 240px;
+  background-image: url('../../assets/kv/kvday1_lg.jpg');
+  background-size: cover; background-position: center 30%;
+}
+.report-kv__veil { position: absolute; inset: 0; background: rgba(7,6,13,.5); }
+.report-kv__content {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 0 1rem;
+}
+.report-kv__sub { font-family: "Cinzel", serif; letter-spacing: .3em; font-size: .78rem; color: var(--text); opacity: .9; margin-bottom: .8rem; }
+.report-kv__title {
+  font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500;
+  font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.05;
+  color: var(--d1-gold); text-shadow: 0 0 28px rgba(194,56,47,.7);
+}
+.report-kv__meta { margin-top: .8rem; font-size: .8rem; letter-spacing: .14em; color: var(--text-dim); }
+
+/* readable panel over the starfield */
+.report-box {
+  background: rgba(20,18,31,.92);
+  border: 1px solid var(--line); border-radius: 18px;
+  padding: 28px 34px;
+}
+
+/* overview */
+.ov { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 16px; max-width: 880px; margin: 0 auto 20px; }
+.ov__card { background: rgba(20,18,31,.92); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; text-align: center; }
+.ov__num { font-family: "Cinzel", serif; font-weight: 700; font-size: 1.9rem; color: #f0ecdd; line-height: 1.2; }
+.ov__lbl { margin-top: .3rem; font-size: .74rem; color: var(--text-dim); letter-spacing: .04em; }
+.ov-days { max-width: 880px; margin: 0 auto; display: flex; gap: 10px; }
+.ov-days__cell { flex: 1; background: rgba(20,18,31,.92); border: 1px solid var(--line); border-radius: 10px; padding: 10px 6px; text-align: center; }
+.ov-days__v { font-family: "Cinzel", serif; font-weight: 700; font-size: 1.05rem; color: var(--d1-gold); }
+.ov-days__d { font-size: .68rem; color: var(--text-dim); margin-top: .1rem; }
+
+/* ranking */
+.ranking { max-width: 760px; margin: 0 auto; }
+.ranking__item { display: flex; align-items: baseline; gap: 1.1rem; padding: 1.05rem .2rem; border-bottom: 1px solid var(--line); }
+.ranking__item:last-child { border-bottom: 0; }
+.ranking__no {
+  font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500;
+  font-size: 2rem; line-height: 1; width: 2.2ch; text-align: center; flex-shrink: 0;
+  color: var(--text-dim);
+}
+.ranking__item--1 .ranking__no { color: var(--d1-gold); font-size: 2.9rem; text-shadow: 0 0 24px rgba(233,179,90,.5); }
+.ranking__item--2 .ranking__no { color: #cfd8e6; font-size: 2.5rem; }
+.ranking__item--3 .ranking__no { color: #d9a06b; font-size: 2.3rem; }
+.ranking__body { flex: 1; }
+.ranking__head { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; }
+.ranking__name { font-size: 1.05rem; font-weight: 700; letter-spacing: .04em; }
+.ranking__item--1 .ranking__name { font-size: 1.3rem; }
+.ranking__count { font-family: "Cinzel", serif; font-size: .8rem; letter-spacing: .1em; color: var(--d1-gold); }
+.ranking__bar { flex-basis: 100%; height: 5px; margin-top: .5rem; background: rgba(180,170,210,.12); border-radius: 3px; overflow: hidden; }
+.ranking__bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--d1-gold), var(--d1)); }
+.ranking__comment { margin-top: .45rem; font-size: .8rem; color: var(--text-dim); }
+
+/* small lists (color / item / hair / other) */
+.mini-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 980px; margin: 0 auto; }
+.mini { background: rgba(20,18,31,.92); border: 1px solid var(--line); border-radius: 16px; padding: 24px 26px; }
+.mini h3 { font-family: "Cinzel", serif; font-weight: 700; letter-spacing: .14em; font-size: .82rem; color: #f0ecdd; margin-bottom: .3rem; }
+.mini h3 small { display: block; font-family: "Noto Sans JP"; font-weight: 400; font-size: .68rem; letter-spacing: .1em; color: var(--text-dim); margin-top: .2rem; }
+.mini table { width: 100%; border-collapse: collapse; margin-top: .8rem; font-size: .84rem; }
+.mini td { padding: .38rem 0; border-bottom: 1px solid rgba(180,170,210,.1); }
+.mini td:last-child { text-align: right; font-family: "Cinzel", serif; color: var(--d2-lt); white-space: nowrap; }
+.mini tr:last-child td { border-bottom: 0; }
+.mini--wide { grid-column: 1 / -1; }
+.mini--wide table { columns: 2; column-gap: 40px; }
+.mini--wide tr { break-inside: avoid; display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid rgba(180,170,210,.1); }
+.mini--wide td { border-bottom: 0; }
+
+/* voices */
+.voices { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.voice { position: relative; background: rgba(20,18,31,.92); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; }
+.voice::before {
+  content: "\201C"; position: absolute; top: 0; left: 12px;
+  font-family: "Cormorant Garamond", serif; font-size: 2.6rem; line-height: 1;
+  color: var(--d1-gold); opacity: .55;
+}
+.voice__text { font-size: .85rem; padding-left: 1.3rem; }
+.voice__meta { margin-top: .6rem; padding-left: 1.3rem; font-size: .72rem; color: var(--text-dim); letter-spacing: .06em; }
+.voice__meta em { font-style: normal; color: var(--d1-gold); }
+.voice:nth-child(even)::before { color: var(--d2-lt); }
+.voice:nth-child(even) .voice__meta em { color: var(--d2-lt); }
+.voice--wide { grid-column: 1 / -1; }
+
+/* pickup (random viewer) */
+.pickup { max-width: 760px; margin: 0 auto; text-align: center; }
+.pickup__card { min-height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem; padding: 10px 6px 22px; border-bottom: 1px solid var(--line); }
+.pickup__text { font-size: 1.05rem; line-height: 2; max-width: 620px; }
+.pickup__text.is-in { animation: pickupIn .35s var(--ease); }
+@keyframes pickupIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.pickup__meta { font-size: .8rem; letter-spacing: .08em; color: var(--d1-gold); }
+.pickup__controls { display: flex; align-items: center; justify-content: center; gap: 1.6rem; flex-wrap: wrap; padding-top: 20px; }
+.pickup__btn {
+  padding: .9rem 2.6rem; border-radius: 999px; border: 0; cursor: pointer;
+  font-family: inherit; font-weight: 700; letter-spacing: .1em; font-size: .95rem;
+  background: var(--d1-gold); color: #1a0f08;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.pickup__btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(233,179,90,.35); }
+.pickup__auto { font-size: .8rem; color: var(--text-dim); cursor: pointer; user-select: none; display: flex; align-items: center; gap: .4rem; }
+.pickup__auto input { accent-color: var(--d1-gold); }
+
+.report-note { max-width: 880px; margin: 56px auto 0; font-size: .74rem; color: var(--text-dim); border-top: 1px solid var(--line); padding-top: 16px; line-height: 2; }
+.report-back { text-align: center; margin-top: 40px; }
+.report-back a { color: var(--text-dim); font-size: .85rem; letter-spacing: .12em; border-bottom: 1px solid var(--line); padding-bottom: 2px; transition: color .25s; }
+.report-back a:hover { color: var(--text); }
+
+/* tighter section rhythm for a data page */
+.report-main .section { padding: 64px 0; }
+
+@media (max-width: 900px) {
+  .mini-cols { grid-template-columns: 1fr; }
+  .mini--wide table { columns: 1; }
+  .voices { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .ov-days { flex-wrap: wrap; }
+  .ov-days__cell { flex-basis: 30%; }
+  .ranking__item { gap: .8rem; }
+  .report-box { padding: 20px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Background star trail (canvas) ===== -->
+<canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="../../index.html" class="header__logo">SORARU Halloween LIVE 2026</a>
+    <button class="header__toggle" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <ul class="nav__list">
+        <li><a href="../../index.html#news" class="nav__link">NEWS</a></li>
+        <li class="nav__item--hidden"><a href="../../index.html#goods" class="nav__link">GOODS</a></li>
+        <li><a href="../../index.html#schedule" class="nav__link">SCHEDULE</a></li>
+        <li><a href="../../index.html#ticket" class="nav__link">TICKET</a></li>
+        <li><a href="../" class="nav__link">REQUEST</a></li>
+        <li><a href="../../index.html#notice" class="nav__link">NOTICE</a></li>
+        <li><a href="../../index.html#profile" class="nav__link">PROFILE</a></li>
+        <li><a href="../../index.html#movie" class="nav__link">MOVIE</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="report-main">
+
+  <!-- ===== KV ===== -->
+  <div class="report-kv">
+    <div class="report-kv__veil"></div>
+    <div class="report-kv__content">
+      <p class="report-kv__sub">SORARU Halloween LIVE 2026</p>
+      <h1 class="report-kv__title">Costume Request — 最終集計</h1>
+      <p class="report-kv__meta">受付期間 2026.07.22 〜 08.04（受付は終了しました）</p>
+    </div>
+  </div>
+
+  <!-- ===== Ranking ===== -->
+  <section class="section" id="ranking">
+    <div class="container">
+      <h2 class="section__title"><span class="en">RANKING</span><span class="jp">衣装リクエスト TOP10</span></h2>
+
+      <div class="ranking report-box">
+        <div class="ranking__item ranking__item--1">
+          <span class="ranking__no">1</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">執事</span><span class="ranking__count">605通</span><span class="ranking__bar"><i style="width:100%"></i></span></div>
+            <p class="ranking__comment">白手袋・モノクル（片眼鏡）・片側編み込みの指定が定番。燕尾服タイプの指定も多い。</p>
+          </div>
+        </div>
+        <div class="ranking__item ranking__item--2">
+          <span class="ranking__no">2</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">メイド服</span><span class="ranking__count">593通</span><span class="ranking__bar"><i style="width:98%"></i></span></div>
+            <p class="ranking__comment">クラシカルな長め丈スカートの指定が多数。色は黒か暗めの青。血糊メイクと組み合わせる案も。</p>
+          </div>
+        </div>
+        <div class="ranking__item ranking__item--3">
+          <span class="ranking__no">3</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">スーツ・タキシード</span><span class="ranking__count">261通</span><span class="ranking__bar"><i style="width:43%"></i></span></div>
+            <p class="ranking__comment">黒・ネイビー基調＋銀アクセ。仮面舞踏会風、白タキシードなどのアレンジ案あり。</p>
+          </div>
+        </div>
+        <div class="ranking__item">
+          <span class="ranking__no">4</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">王子様</span><span class="ranking__count">237通</span><span class="ranking__bar"><i style="width:39%"></i></span></div>
+            <p class="ranking__comment">『青空とメルヒェン讃歌』の王子様衣装の再演希望が多数。王冠・杖・片肩マントの指定も。</p>
+          </div>
+        </div>
+        <div class="ranking__item">
+          <span class="ranking__no">5</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">和装（着物・袴・浴衣）</span><span class="ranking__count">194通</span><span class="ranking__bar"><i style="width:32%"></i></span></div>
+            <p class="ranking__comment">『空祭り』の衣装への言及が多い。紺青の袴＋花刺繍、和風軍服、侍スタイルなど。</p>
+          </div>
+        </div>
+        <div class="ranking__item">
+          <span class="ranking__no">6</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">制服・学ラン</span><span class="ranking__count">133通</span><span class="ranking__bar"><i style="width:22%"></i></span></div>
+            <p class="ranking__comment">新撰組風ロング丈の学ラン＋赤インナーなど、大人びた着こなしの提案が中心。</p>
+          </div>
+        </div>
+        <div class="ranking__item">
+          <span class="ranking__no">7</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">軍服</span><span class="ranking__count">109通</span><span class="ranking__bar"><i style="width:18%"></i></span></div>
+            <p class="ranking__comment">黒×ネイビー×シルバーの配色指定がほぼ共通。軍帽・片肩マント・ブーツのフル装備。</p>
+          </div>
+        </div>
+        <div class="ranking__item">
+          <span class="ranking__no">8</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">白いロング丈の衣装</span><span class="ranking__count">94通</span><span class="ranking__bar"><i style="width:16%"></i></span></div>
+            <p class="ranking__comment">『銀の祈誓』『ユメユイ』の白衣装を参照。チュール・レースの布量多め。花嫁ゾンビ案も。</p>
+          </div>
+        </div>
+        <div class="ranking__item">
+          <span class="ranking__no">9</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">吸血鬼</span><span class="ranking__count">88通</span><span class="ranking__bar"><i style="width:15%"></i></span></div>
+            <p class="ranking__comment">キービジュアル準拠の希望が目立つ。黒マント×青裏地、八重歯・眼帯の指定など。</p>
+          </div>
+        </div>
+        <div class="ranking__item">
+          <span class="ranking__no">10</span>
+          <div class="ranking__body">
+            <div class="ranking__head"><span class="ranking__name">囚人・看守・警察</span><span class="ranking__count">51通</span><span class="ranking__bar"><i style="width:8%"></i></span></div>
+            <p class="ranking__comment">ハロウィン仮装枠の最上位。以下、神父・天使・魔法使い・悪魔と続く（下表参照）。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Data ===== -->
+  <section class="section" id="data">
+    <div class="container">
+      <h2 class="section__title"><span class="en">DATA</span><span class="jp">カラー・小物・髪型・その他</span></h2>
+      <div class="mini-cols">
+        <div class="mini">
+          <h3>COLOR<small>色の言及数</small></h3>
+          <table>
+            <tr><td>白</td><td>551</td></tr>
+            <tr><td>青系（青・水色・ネイビー）</td><td>481</td></tr>
+            <tr><td>黒</td><td>469</td></tr>
+            <tr><td>銀・シルバー</td><td>141</td></tr>
+            <tr><td>赤系</td><td>107</td></tr>
+            <tr><td>金・ゴールド</td><td>55</td></tr>
+          </table>
+        </div>
+        <div class="mini">
+          <h3>ITEM<small>小物・素材の言及数</small></h3>
+          <table>
+            <tr><td>眼鏡・モノクル</td><td>285</td></tr>
+            <tr><td>手袋・グローブ</td><td>249</td></tr>
+            <tr><td>ロング丈</td><td>248</td></tr>
+            <tr><td>キラキラ・スパンコール</td><td>129</td></tr>
+            <tr><td>マント</td><td>124</td></tr>
+            <tr><td>帽子・ハット</td><td>85</td></tr>
+            <tr><td>ネクタイ</td><td>69</td></tr>
+            <tr><td>ピアス・イヤーカフ</td><td>56</td></tr>
+          </table>
+        </div>
+        <div class="mini">
+          <h3>HAIR<small>髪型の言及数</small></h3>
+          <table>
+            <tr><td>編み込み・三つ編み</td><td>153</td></tr>
+            <tr><td>おでこ出し・かきあげ</td><td>53</td></tr>
+            <tr><td>ウルフ</td><td>52</td></tr>
+            <tr><td>猫耳・けもみみ</td><td>49</td></tr>
+            <tr><td>外はね</td><td>16</td></tr>
+            <tr><td>ポニーテール</td><td>11</td></tr>
+          </table>
+        </div>
+        <div class="mini mini--wide">
+          <h3>OTHER REQUESTS<small>11位以下・少数派リクエスト</small></h3>
+          <table>
+            <tr><td>着ぐるみ・ぬいぐるみ系（しろくま、はんぺんくん 等）</td><td>66</td></tr>
+            <tr><td>神父・聖職者</td><td>47</td></tr>
+            <tr><td>アイドル系キラキラ衣装</td><td>46</td></tr>
+            <tr><td>花嫁・ウェディングドレス</td><td>46</td></tr>
+            <tr><td>ゴシック・ロリータ</td><td>36</td></tr>
+            <tr><td>天使・翼</td><td>32</td></tr>
+            <tr><td>魔法使い・魔女</td><td>28</td></tr>
+            <tr><td>悪魔・死神</td><td>31</td></tr>
+            <tr><td>パジャマ・部屋着（ナイトキャップ付き 等）</td><td>26</td></tr>
+            <tr><td>カジュアル・ストリート</td><td>22</td></tr>
+            <tr><td>海賊</td><td>18</td></tr>
+            <tr><td>ヤンキー・特攻服</td><td>10</td></tr>
+            <tr><td>ピエロ・サーカス団長</td><td>5</td></tr>
+            <tr><td>青いスパンコールの着物（でサンバ曲）</td><td>1</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pickup (random) ===== -->
+  <section class="section" id="pickup">
+    <div class="container">
+      <h2 class="section__title"><span class="en">PICKUP</span><span class="jp">ランダム表示</span></h2>
+
+      <div class="pickup report-box">
+        <div class="pickup__card" id="pickupCard" aria-live="polite">
+          <p class="pickup__text" id="pickupText">下のボタンを押すと、届いた回答からランダムに1件表示します。</p>
+          <p class="pickup__meta" id="pickupMeta"></p>
+        </div>
+        <div class="pickup__controls">
+          <button class="pickup__btn" id="pickupBtn" type="button">ランダムに1件引く</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Voices ===== -->
+  <section class="section" id="voices">
+    <div class="container">
+      <h2 class="section__title"><span class="en">VOICES</span><span class="jp">回答の抜粋</span></h2>
+      <div class="voices">
+
+        <div class="voice">
+          <p class="voice__text">執事！！！！執事がいいです！！露出少なめ、ジャケット脱いだ時だけ腕まくりの敏腕執事姿がみたいです！！</p>
+          <p class="voice__meta"><em>執事</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">猫耳にメイド服…あわよくば「お帰りなさいませ、ご主人様♡」を…お願いします</p>
+          <p class="voice__meta"><em>メイド</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">合法的にそらるさんにヴァンパイア衣装をリクエストできる幸せ。黒に青の裏地のマントを羽織ってください。タイも青がいいかな</p>
+          <p class="voice__meta"><em>吸血鬼</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">黒、ネイビー、シルバーを基調にした軍服。月や星をモチーフにしたシルバー刺繍、片肩マントやブーツで気品のある指揮官のような雰囲気だと嬉しいです。</p>
+          <p class="voice__meta"><em>軍服</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">メルヒェン讃歌の時の「王子様衣装」もう一回着ていただきたいです！！</p>
+          <p class="voice__meta"><em>王子様</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">王子様服みたいです　ガチ白馬系の　かぼちゃパンツはいてほしい🎃</p>
+          <p class="voice__meta"><em>王子様</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">青いスパンコールの着物　それでサンバ曲歌ってほしい</p>
+          <p class="voice__meta"><em>和装</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">くまそらるとお揃いのしろくまの着ぐるみ</p>
+          <p class="voice__meta"><em>着ぐるみ</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">魔法使い！とんがり帽子と杖など。長髪ストレートで、モノクルをつけてたら凄く良さそう。</p>
+          <p class="voice__meta"><em>魔法使い</em></p>
+        </div>
+
+        <div class="voice">
+          <p class="voice__text">パジャマ ナイトキャップあり （もこもこ）（黒縁メガネ）</p>
+          <p class="voice__meta"><em>パジャマ</em></p>
+        </div>
+
+        <div class="voice voice--wide">
+          <p class="voice__text">袴風衣装で色は紺青色、ところどころにネリネという花を刺繍した衣装。ネリネの花言葉は「また会う日を楽しみに」。いつライブに行けて、いつそらるさんの生歌が聴けるか分からないからこそ、次行ける日を楽しみにしているので、花言葉ピッタリかなと思いました。</p>
+          <p class="voice__meta"><em>和装</em></p>
+        </div>
+
+        <div class="voice voice--wide">
+          <p class="voice__text">そらるさんは白くて丈の長い衣装が大変お似合いになると思います。白いロング丈のゆったりしたローブに、金糸で縁取られた白い短めのケープ。きっと白い肌に映えますし、ハロウィンというコンセプトにも合うのではないかと思います。</p>
+          <p class="voice__meta"><em>白い衣装</em></p>
+        </div>
+
+      </div>
+
+      <div class="report-back">
+        <a href="../../index.html">← TOPへ戻る</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <p class="footer__copy">&copy; 2026 SORARU. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<script src="../../js/script.js"></script>
+<script src="voices.js"></script>
+<script>
+(function () {
+  var textEl = document.getElementById('pickupText');
+  var metaEl = document.getElementById('pickupMeta');
+  var btn = document.getElementById('pickupBtn');
+  var usedIdx = {};     // 同じ回答自体の再表示は防ぐ
+
+  function pick() {
+    if (typeof VOICES === 'undefined' || !VOICES.length) return;
+    var pool = [];
+    VOICES.forEach(function (v, i) {
+      if (!usedIdx[i]) pool.push(i);
+    });
+    if (!pool.length) {
+      textEl.classList.remove('is-in');
+      void textEl.offsetWidth;
+      textEl.textContent = 'すべての回答を表示しました。';
+      metaEl.textContent = '';
+      textEl.classList.add('is-in');
+      return;
+    }
+    var idx = pool[Math.floor(Math.random() * pool.length)];
+    var v = VOICES[idx];
+    usedIdx[idx] = true;
+    textEl.classList.remove('is-in');
+    void textEl.offsetWidth; // reflow to retrigger animation
+    textEl.textContent = v.t;
+    metaEl.textContent = '';
+    textEl.classList.add('is-in');
+  }
+
+  btn.addEventListener('click', pick);
+})();
+</script>
+</body>
+</html>
