@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* --- Scroll reveal --- */
   const targets = document.querySelectorAll(
-    '.news__item, .goods__soon, .schedule__card, .ticket__price, .ticket__phase, .ticket__btn, .notice__box, .profile__inner, .movie__card, .section__title'
+    '.news__item, .goods__soon, .card, .sched__col, .schedule__card, .ticket__price, .ticket__phase, .ticket__btn, .notice__box, .profile__inner, .movie__card, .section__title'
   );
   targets.forEach(el => el.classList.add('reveal'));
 

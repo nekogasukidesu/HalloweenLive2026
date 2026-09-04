@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOODS｜SORARU Halloween LIVE 2026〜Starhallow〜</title>
+<meta name="description" content="そらる ライブ2026『Starhallow / Starveil』オフィシャルグッズ。ラインナップ・事前注文・会場販売のご案内。">
+<meta property="og:title" content="GOODS｜SORARU Halloween LIVE 2026〜Starhallow〜">
+<meta property="og:description" content="そらる ライブ2026『Starhallow / Starveil』オフィシャルグッズのご案内。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://soraruru.jp/HalloweenLive2026/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GOODS｜SORARU Halloween LIVE 2026〜Starhallow〜">
+<meta name="twitter:description" content="そらる ライブ2026『Starhallow / Starveil』オフィシャルグッズのご案内。">
+<meta name="twitter:image" content="https://soraruru.jp/HalloweenLive2026/assets/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/gate.js"></script>
+<style>
+/* ============================================
+   GOODS page
+============================================ */
+.goods-main { padding-top: 72px; }
+
+/* ===== KV (2枚並び + 中央ロゴ) ===== */
+.gkv { position: relative; display: flex; overflow: hidden; background: var(--bg); }
+.gkv__img { flex: 1; min-width: 0; aspect-ratio: 1920 / 1367; object-fit: cover; display: block; }
+.gkv::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(7,6,13,.25) 0%, rgba(7,6,13,0) 35%, rgba(7,6,13,.75) 100%);
+}
+.gkv__center {
+  position: absolute; left: 50%; bottom: 8%; transform: translateX(-50%);
+  z-index: 2; text-align: center; width: 92%; pointer-events: none;
+}
+.gkv__logo { display: inline-block; width: min(420px, 60vw); height: auto; filter: drop-shadow(0 6px 32px rgba(0,0,0,.7)); }
+.gkv__label {
+  display: block; margin-top: .6rem; font-family: "Cinzel", serif; font-weight: 700;
+  letter-spacing: .3em; font-size: clamp(.9rem, 2.4vw, 1.3rem); color: #f0ecdd;
+  text-shadow: 0 2px 20px rgba(0,0,0,.9);
+}
+
+/* ===== Info (事前注文 / 会場販売) ===== */
+.info { padding: 56px 0 24px; }
+.info__inner { max-width: 800px; margin: 0 auto; width: 90%; }
+.info__bar {
+  text-align: center; padding: 14px 20px; border-radius: 6px;
+  background: var(--d1-gold); color: #1a0f08;
+  font-weight: 900; letter-spacing: .3em; font-size: clamp(.95rem, 2.6vw, 1.2rem);
+}
+.info__bar .sp { color: #1a0f08; opacity: .55; margin: 0 .5em; }
+
+.preorder {
+  display: flex; align-items: center; justify-content: center; gap: 22px;
+  padding: 30px 12px 28px; flex-wrap: wrap;
+}
+.app-icon {
+  width: 88px; height: 88px; border-radius: 22px; flex-shrink: 0;
+  background: #fff; color: #4a7090;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500; font-size: 1.25rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,.35);
+}
+.preorder__body { text-align: center; }
+.preorder__date {
+  font-family: "Cinzel", serif; font-weight: 700; letter-spacing: .05em;
+  font-size: clamp(1.5rem, 4.6vw, 2.5rem); line-height: 1.2; color: #f0ecdd;
+}
+.preorder__date .day { font-family: "Noto Sans JP"; font-size: .45em; font-weight: 700; letter-spacing: 0; vertical-align: middle;
+  display: inline-block; width: 1.9em; height: 1.9em; line-height: 1.9em; border-radius: 50%; background: var(--d1-gold); color: #1a0f08; margin: 0 .25em; }
+.preorder__date .arrow { color: var(--d1-gold); margin: 0 .3em; font-family: "Noto Sans JP"; }
+.preorder__date.is-soon { letter-spacing: .25em; font-size: clamp(1.4rem, 4vw, 2rem); }
+.preorder__sub { margin-top: .4rem; font-weight: 700; letter-spacing: .12em; font-size: clamp(.9rem, 2.2vw, 1.1rem); color: var(--text); }
+
+.sched { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 6px; }
+.sched__col { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.sched__head {
+  text-align: center; padding: 12px 14px; font-weight: 700; letter-spacing: .12em; font-size: .9rem; line-height: 1.6;
+  color: #1a0f08; background: var(--d1-gold);
+}
+.sched__col--venue .sched__head { background: var(--d2-lt); }
+.sched__body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; }
+.sched__row { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.sched__date { font-family: "Cinzel", serif; font-weight: 700; font-size: 1.5rem; letter-spacing: .03em; color: #f0ecdd; line-height: 1; }
+.sched__day { display: inline-block; width: 1.7em; height: 1.7em; line-height: 1.7em; text-align: center; border-radius: 50%; font-size: .78rem; font-weight: 700; background: #f0ecdd; color: #1a0f08; }
+.sched__day--sat { background: var(--d2-lt); }
+.sched__day--sun { background: var(--d1-lt); }
+.sched__time { font-weight: 700; font-size: 1.05rem; letter-spacing: .04em; }
+.sched__time small { display: block; font-weight: 400; font-size: .72rem; color: var(--text-dim); letter-spacing: 0; }
+.sched__tbd { font-weight: 700; font-size: .95rem; letter-spacing: .1em; color: var(--text-dim); }
+
+.bonus {
+  margin-top: 18px; background: var(--panel); border: 1px solid rgba(233,179,90,.35); border-radius: 14px;
+  padding: 24px 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.bonus__label { display: inline-block; padding: .3rem 1.2rem; border-radius: 999px; background: var(--d1-gold); color: #1a0f08; font-weight: 700; font-size: .82rem; letter-spacing: .1em; margin-bottom: .8rem; }
+.bonus__head { font-weight: 700; font-size: clamp(1rem, 2.4vw, 1.2rem); line-height: 1.7; }
+.bonus__head .yen { font-family: "Cinzel", serif; font-weight: 700; font-size: 1.7em; color: #f0ecdd; margin: 0 .1em; }
+.bonus__head mark { background: rgba(233,179,90,.25); color: var(--d1-gold); padding: .05em .3em; font-weight: 900; }
+.bonus__note { margin-top: .6rem; font-size: .76rem; color: var(--text-dim); line-height: 1.8; }
+
+.appbtn {
+  display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap;
+  margin: 34px auto 0; max-width: 700px;
+}
+.appbtn .app-icon { width: 104px; height: 104px; border-radius: 26px; font-size: 1.5rem; }
+.appbtn__text {
+  position: relative; padding: 20px 40px; border-radius: 10px;
+  background: var(--d2-lt); color: #0b1a2c; font-weight: 900; letter-spacing: .12em;
+  font-size: clamp(1rem, 2.8vw, 1.45rem); line-height: 1.6; text-align: center;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.appbtn__text::before { content: ""; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-right-color: var(--d2-lt); border-left: 0; }
+.appbtn:hover .appbtn__text { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(111,198,255,.35); }
+
+/* ===== Lineup header ===== */
+.lineup-head { text-align: center; padding: 64px 20px 32px; }
+.lineup-head__sub { font-size: .7rem; letter-spacing: .45em; color: var(--text-dim); margin-bottom: 14px; }
+.lineup-head__main { font-family: "Cinzel", serif; font-weight: 700; letter-spacing: .35em; font-size: clamp(1.6rem, 5vw, 2.4rem); color: #f0ecdd; }
+.lineup-head__deco { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; }
+.lineup-head__deco .line { width: 40px; height: 1px; background: linear-gradient(90deg, transparent, var(--d1-gold)); }
+.lineup-head__deco .line:last-child { background: linear-gradient(90deg, var(--d1-gold), transparent); }
+.lineup-head__deco .dot { width: 5px; height: 5px; background: var(--d1-gold); transform: rotate(45deg); }
+.lineup-head__count { margin-top: 14px; font-family: "Cinzel", serif; font-size: .7rem; letter-spacing: .3em; color: var(--text-dim); }
+
+/* ===== Gallery ===== */
+.gallery {
+  max-width: 1100px; margin: 0 auto; padding: 16px 24px 72px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+.card {
+  cursor: pointer; border-radius: 12px; overflow: hidden;
+  background: var(--panel); border: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(233,179,90,.45); box-shadow: 0 14px 40px rgba(0,0,0,.4); }
+.card:active { transform: translateY(-2px); }
+.card__imgwrap { overflow: hidden; position: relative; }
+.card__img {
+  width: 100%; aspect-ratio: 1 / 1; background-size: cover; background-position: center; background-color: var(--bg-2);
+  transition: transform .35s var(--ease);
+}
+.card:hover .card__img { transform: scale(1.04); }
+.card__img--none {
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(60% 60% at 30% 30%, rgba(233,179,90,.14), transparent 70%),
+    radial-gradient(60% 60% at 75% 75%, rgba(111,198,255,.14), transparent 70%),
+    var(--bg-2);
+}
+.card__img--none span { font-family: "Cinzel", serif; font-weight: 700; letter-spacing: .25em; font-size: 2.2rem; color: rgba(244,241,255,.18); }
+.card__body { padding: 14px 16px 18px; display: flex; flex-direction: column; flex: 1; min-height: 88px; }
+.card__tag {
+  display: inline-block; align-self: flex-start; margin-bottom: 6px;
+  font-size: .62rem; font-weight: 700; letter-spacing: .1em; padding: 1px 10px; border-radius: 999px;
+  border: 1px solid var(--d1-gold); color: var(--d1-gold); background: rgba(233,179,90,.1);
+}
+.card__name { font-size: .88rem; font-weight: 500; line-height: 1.7; color: var(--text); margin-bottom: 6px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card__price { margin-top: auto; font-size: .92rem; font-weight: 700; color: var(--d1-gold); letter-spacing: .03em; }
+
+/* ===== Kuji lineup ===== */
+.lineup-head--kuji { padding-top: 24px; position: relative; }
+.lineup-head--kuji::before {
+  content: ""; display: block; width: 90%; max-width: 1052px; height: 1px; margin: 0 auto 64px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+.kuji-price { margin-top: 22px; font-size: 1rem; color: var(--text-dim); letter-spacing: .06em; }
+.kuji-price strong { font-family: "Cinzel", serif; font-weight: 700; font-size: 2.4rem; color: #f0ecdd; margin: 0 .1em; line-height: 1; }
+.kuji-price small { font-size: .75rem; }
+.kuji-lead { margin-top: .6rem; font-size: .88rem; color: var(--text-dim); line-height: 1.9; }
+.gallery--kuji { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.card__rank {
+  position: absolute; top: 10px; left: 10px; z-index: 2;
+  font-family: "Cinzel", serif; font-weight: 700; font-size: .7rem; letter-spacing: .1em;
+  padding: .28rem .75rem; border-radius: 6px; background: #f0ecdd; color: #1a0f08;
+}
+.card--top .card__rank { background: var(--d1-gold); }
+.card--top { border-color: rgba(233,179,90,.4); }
+.card--top .card__img--none span { color: rgba(233,179,90,.35); }
+.gallery--kuji .card__body { min-height: 0; padding: 12px 14px 16px; }
+.gallery--kuji .card__name { font-size: .85rem; -webkit-line-clamp: 3; }
+.card__kind { font-size: .76rem; color: var(--text-dim); letter-spacing: .04em; margin-top: auto; }
+.m-title .card__rank { position: static; display: inline-block; vertical-align: middle; margin-right: 8px; }
+.modal.is-top .card__rank { background: var(--d1-gold); }
+
+/* ===== Modal ===== */
+.overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(7,6,13,.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  justify-content: center; align-items: center;
+}
+.overlay.active { display: flex; }
+.overlay.fade-in { animation: overlayIn .3s ease forwards; }
+.overlay.fade-out { animation: overlayOut .25s ease forwards; }
+@keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes overlayOut { from { opacity: 1; } to { opacity: 0; } }
+.m-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 1010;
+  width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line);
+  background: rgba(20,18,31,.9); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, transform .2s;
+}
+.m-arrow:hover { background: var(--panel); transform: translateY(-50%) scale(1.08); }
+.m-arrow svg { width: 20px; height: 20px; stroke: var(--d1-gold); stroke-width: 2.5; fill: none; }
+.m-arrow.prev { left: 16px; }
+.m-arrow.next { right: 16px; }
+.modal {
+  position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+  max-width: 880px; width: calc(100% - 120px); max-height: 88vh; overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,.6);
+  opacity: 0; transform: translateY(30px);
+  transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .3s ease;
+  display: flex; flex-direction: row;
+}
+.overlay.active .modal { transform: translateY(0); opacity: 1; }
+.m-close {
+  position: absolute; top: 10px; right: 10px; z-index: 10;
+  width: 36px; height: 36px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(7,6,13,.7); display: flex; align-items: center; justify-content: center;
+  transition: background .2s, transform .2s;
+}
+.m-close:hover { background: var(--bg); transform: scale(1.1); }
+.m-close svg { width: 16px; height: 16px; stroke: #f0ecdd; stroke-width: 2.5; }
+.m-left { flex: 0 0 50%; display: flex; flex-direction: column; background: var(--bg-2); position: relative; min-height: 0; }
+.m-imgwrap { flex: 1; overflow: hidden; position: relative; background: var(--bg-2); display: flex; align-items: center; justify-content: center; }
+.m-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.m-imgwrap .card__img--none { position: absolute; inset: 0; }
+.m-imgwrap .card__img--none span { font-size: 3rem; }
+.m-thumbs { display: flex; gap: 6px; padding: 10px 12px; overflow-x: auto; background: rgba(7,6,13,.5); flex-shrink: 0; }
+.m-thumbs:empty { display: none; padding: 0; }
+.thumb { width: 48px; height: 48px; border-radius: 6px; overflow: hidden; border: 2px solid transparent; cursor: pointer; flex-shrink: 0; transition: border-color .2s; }
+.thumb.active { border-color: var(--d1-gold); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.m-right { flex: 1; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
+.m-right::-webkit-scrollbar { width: 4px; }
+.m-right::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+.m-info { padding: 26px 26px 22px; flex: 1; }
+.m-number { font-family: "Cinzel", serif; font-size: .66rem; letter-spacing: .3em; color: var(--text-dim); margin-bottom: 10px; }
+.m-title { font-size: 1.05rem; font-weight: 700; line-height: 1.65; color: var(--text); margin-bottom: 8px; }
+.m-title .card__tag { vertical-align: middle; margin: 0 8px 0 0; }
+.m-price { font-size: 1.25rem; font-weight: 700; color: var(--d1-gold); margin-bottom: 14px; letter-spacing: .03em; }
+.m-kind { display: block; margin-top: .3rem; font-size: .8rem; font-weight: 500; color: var(--text-dim); letter-spacing: .04em; }
+.m-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); margin-bottom: 14px; }
+.m-desc { font-size: .85rem; line-height: 1.95; color: var(--text-dim); white-space: pre-line; overflow-wrap: break-word; }
+
+/* ===== Notice text section ===== */
+.text-section { max-width: 900px; margin: 0 auto; padding: 24px 32px 48px; }
+.notice-heading {
+  background: #2a2540; color: var(--text); text-align: center; padding: 18px 32px;
+  font-size: 1rem; font-weight: 700; line-height: 1.6; border-radius: 40px; margin-bottom: 30px;
+  border: 1px solid var(--line);
+}
+.notebox {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 26px 30px; margin-bottom: 28px;
+}
+.notebox p { font-size: .88rem; line-height: 2; color: var(--text-dim); margin-bottom: 4px; }
+.notebox .highlight { background: rgba(233,179,90,.08); border: 1px solid rgba(233,179,90,.35); border-radius: 10px; padding: 16px 22px; margin-top: 16px; }
+.notebox .highlight p { color: var(--d1-gold); font-weight: 700; text-align: center; font-size: .9rem; }
+.steps-heading { text-align: center; font-family: "Noto Sans JP"; font-size: 1.15rem; font-weight: 700; letter-spacing: .4em; color: #f0ecdd; margin: 40px 0 24px; }
+.steps-heading .sparkle { color: var(--d1-gold); }
+.steps-list { max-width: 700px; margin: 0 auto 20px; display: flex; flex-direction: column; gap: 12px; }
+.step-item {
+  background: var(--panel); border: 1px solid var(--line); color: var(--text);
+  padding: 14px 26px; border-radius: 32px; display: flex; align-items: center; gap: 18px;
+  font-size: .95rem; font-weight: 700; line-height: 1.5; transition: border-color .2s, transform .2s;
+}
+a.step-item { cursor: pointer; }
+a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
+.step-num { font-family: "Cinzel", serif; font-size: .7rem; letter-spacing: .1em; color: var(--text-dim); white-space: nowrap; }
+.step-num span { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.9rem; font-weight: 500; color: var(--d1-gold); margin-left: .15em; }
+.step-day {
+  max-width: 700px; margin: 0 auto; background: var(--bg-2); border: 1px solid rgba(111,198,255,.4); border-radius: 12px;
+  text-align: center; padding: 20px 24px; font-size: .92rem; line-height: 1.9;
+}
+.step-day .day-label { display: inline-block; border: 1.5px solid var(--d2-lt); color: var(--d2-lt); padding: 4px 22px; font-size: 1.1rem; font-weight: 700; border-radius: 6px; margin-bottom: 10px; }
+.bullet-notes { font-size: .85rem; line-height: 2.1; color: var(--text-dim); margin-top: 24px; }
+.bullet-notes p { margin-bottom: 4px; padding-left: 1em; text-indent: -1em; }
+.sub-heading { background: #2a2540; border: 1px solid var(--line); color: var(--text); font-size: .95rem; font-weight: 700; text-align: center; padding: 12px 24px; border-radius: 40px; margin: 34px 0 14px; }
+
+.goods__back { text-align: center; padding: 20px 0 56px; }
+.goods__back a {
+  display: inline-flex; align-items: center; gap: 6px; padding: 12px 40px;
+  border: 1px solid var(--line); border-radius: 999px; color: var(--text-dim); font-size: .85rem; letter-spacing: .12em;
+  transition: color .25s, border-color .25s;
+}
+.goods__back a:hover { color: var(--text); border-color: var(--text-dim); }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 16px 16px 56px; }
+  .gallery--kuji { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+}
+@media (max-width: 768px) {
+  .gkv__img--day2 { display: none; }
+  .gkv__img { aspect-ratio: 4 / 3; }
+  .info { padding-top: 40px; }
+  .sched { grid-template-columns: 1fr; }
+  .text-section { padding: 16px 16px 36px; }
+  .notice-heading { font-size: .9rem; padding: 14px 18px; }
+  .notebox { padding: 20px 18px; }
+  .notebox p { font-size: .82rem; }
+  .steps-heading { font-size: 1rem; letter-spacing: .3em; }
+  .step-item { padding: 11px 16px; font-size: .82rem; gap: 10px; }
+  .step-num span { font-size: 1.4rem; }
+  .step-day { font-size: .85rem; padding: 16px 16px; }
+  .bullet-notes { font-size: .8rem; line-height: 2; }
+  .bonus { padding: 20px 18px; }
+}
+@media (max-width: 540px) {
+  .lineup-head { padding: 44px 16px 24px; }
+  .lineup-head--kuji { padding-top: 16px; }
+  .lineup-head--kuji::before { margin-bottom: 44px; }
+  .gallery--kuji { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .kuji-price strong { font-size: 2rem; }
+  .card__rank { top: 8px; left: 8px; font-size: .62rem; padding: .2rem .55rem; }
+  .gallery { gap: 12px; padding: 12px 12px 48px; }
+  .card__body { padding: 10px 10px 14px; min-height: 76px; }
+  .card__name { font-size: .8rem; }
+  .card__price { font-size: .85rem; }
+  .card__img--none span { font-size: 1.6rem; }
+  .preorder { gap: 14px; }
+  .app-icon { width: 72px; height: 72px; border-radius: 18px; font-size: 1rem; }
+  .appbtn .app-icon { width: 84px; height: 84px; border-radius: 20px; font-size: 1.2rem; }
+  .appbtn__text { padding: 14px 22px; }
+  /* SP modal: vertical */
+  .modal { flex-direction: column; width: calc(100% - 24px); max-width: 360px; max-height: 94vh; }
+  .m-left { flex: 0 0 auto; width: 100%; }
+  .m-imgwrap { aspect-ratio: 1 / 1; height: auto; width: 100%; }
+  .m-img { object-fit: contain; }
+  .m-thumbs { padding: 6px 10px; gap: 5px; }
+  .thumb { width: 40px; height: 40px; border-radius: 5px; }
+  .m-right { flex: 1; overflow-y: auto; }
+  .m-close { width: 30px; height: 30px; top: 8px; right: 8px; }
+  .m-close svg { width: 14px; height: 14px; }
+  .m-arrow { width: 34px; height: 34px; }
+  .m-arrow.prev { left: 4px; }
+  .m-arrow.next { right: 4px; }
+  .m-arrow svg { width: 15px; height: 15px; }
+  .m-info { padding: 12px 16px 14px; }
+  .m-title { font-size: .92rem; margin-bottom: 6px; line-height: 1.5; }
+  .m-price { font-size: 1.05rem; margin-bottom: 10px; }
+  .m-desc { font-size: .78rem; line-height: 1.75; }
+  .notebox .highlight p { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Background star trail (canvas) ===== -->
+<canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="../index.html" class="header__logo">SORARU Halloween LIVE 2026</a>
+    <button class="header__toggle" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <ul class="nav__list">
+        <li><a href="../index.html#news" class="nav__link">NEWS</a></li>
+        <li class="nav__item--hidden"><a href="./" class="nav__link">GOODS</a></li>
+        <li><a href="../index.html#schedule" class="nav__link">SCHEDULE</a></li>
+        <li><a href="../index.html#ticket" class="nav__link">TICKET</a></li>
+        <li><a href="../survey/" class="nav__link">REQUEST</a></li>
+        <li><a href="../index.html#notice" class="nav__link">NOTICE</a></li>
+        <li><a href="../index.html#profile" class="nav__link">PROFILE</a></li>
+        <li><a href="../index.html#movie" class="nav__link">MOVIE</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="goods-main">
+
+  <!-- ===== KV ===== -->
+  <section class="gkv">
+    <img src="../assets/kv/kvday1_lg.jpg" alt="Starhallow" class="gkv__img gkv__img--day1">
+    <img src="../assets/kv/kvday2_lg.jpg" alt="Starveil" class="gkv__img gkv__img--day2">
+    <div class="gkv__center">
+      <img src="../assets/kv/logo_main.png" alt="SORARU Halloween LIVE 2026 Starhallow / Starveil" class="gkv__logo">
+      <span class="gkv__label">OFFICIAL GOODS</span>
+    </div>
+  </section>
+
+  <!-- ===== Info: 事前注文 / 会場販売 ===== -->
+  <!--
+    ▼ 受付期間が決まったら .preorder__date を以下の形式に差し替え（is-soon を外す）:
+      <p class="preorder__date">10.10<span class="day">土</span>18:00<span class="arrow">→</span>10.25<span class="day">日</span>23:59</p>
+    ▼ 受取時間・当日販売時間が決まったら .sched__tbd を .sched__time に差し替え:
+      <span class="sched__time">13:00〜17:00</span>
+      <span class="sched__time">13:00〜<small>終演後30分程度まで</small></span>
+  -->
+  <section class="info" id="preorder">
+    <div class="info__inner">
+      <div class="info__bar"><span class="sp">✦</span>グッズ事前注文 会場受取受付<span class="sp">✦</span></div>
+
+      <div class="preorder">
+        <div class="app-icon">Cielkocka</div>
+        <div class="preorder__body">
+          <p class="preorder__date is-soon">COMING SOON</p>
+          <p class="preorder__sub">cielkocka アプリにて受付</p>
+        </div>
+      </div>
+
+      <div class="sched">
+        <div class="sched__col">
+          <div class="sched__head">グッズ事前注文<br>会場受取 引換時間</div>
+          <div class="sched__body">
+            <div class="sched__row"><span class="sched__date">10.31</span><span class="sched__day sched__day--sat">土</span><span class="sched__tbd">後日発表</span></div>
+            <div class="sched__row"><span class="sched__date">11.01</span><span class="sched__day sched__day--sun">日</span><span class="sched__tbd">後日発表</span></div>
+          </div>
+        </div>
+        <div class="sched__col sched__col--venue">
+          <div class="sched__head">グッズ当日販売<br>受付時間</div>
+          <div class="sched__body">
+            <div class="sched__row"><span class="sched__date">10.31</span><span class="sched__day sched__day--sat">土</span><span class="sched__tbd">後日発表</span></div>
+            <div class="sched__row"><span class="sched__date">11.01</span><span class="sched__day sched__day--sun">日</span><span class="sched__tbd">後日発表</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▼ 購入特典が決まったらコメントを外して内容を編集
+      <div class="bonus">
+        <div>
+          <span class="bonus__label">グッズ事前注文 購入特典</span>
+          <p class="bonus__head">ご購入金額税込 <span class="yen">¥5,000</span> 毎に<br><mark>レプリカチケット</mark> を1枚プレゼント！</p>
+          <p class="bonus__note">※お会計が税込10,000円の場合、2枚お渡しとなります。<br>※複数会計 合算不可となります。<br>※受取日時によってデザインは異なります。</p>
+        </div>
+      </div>
+      -->
+
+      <a class="appbtn" href="https://cielkocka.goods-order.com/" target="_blank" rel="noopener noreferrer">
+        <div class="app-icon">Cielkocka</div>
+        <div class="appbtn__text">「cielkocka アプリ」の<br>ダウンロードはこちら</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Lineup ===== -->
+  <div class="lineup-head" id="lineup">
+    <div class="lineup-head__sub">SORARU Halloween LIVE 2026 − Starhallow / Starveil −</div>
+    <h1 class="lineup-head__main">GOODS LINEUP</h1>
+    <div class="lineup-head__deco"><div class="line"></div><div class="dot"></div><div class="line"></div></div>
+    <div class="lineup-head__count" id="lineup-count"></div>
+  </div>
+  <div class="gallery" id="gallery"></div>
+
+  <!-- ===== Kuji lineup ===== -->
+  <div class="lineup-head lineup-head--kuji" id="kuji">
+    <div class="lineup-head__sub">HALLOWEEN KUJI</div>
+    <h2 class="lineup-head__main">KUJI LINEUP</h2>
+    <div class="lineup-head__deco"><div class="line"></div><div class="dot"></div><div class="line"></div></div>
+    <p class="kuji-price">1回 <strong>¥800</strong><small>(税込)</small></p>
+    <p class="kuji-lead">特賞・A賞〜F賞のいずれかが必ず当たります。<br>景品の種類はお選びいただけません。</p>
+    <div class="lineup-head__count" id="kuji-count"></div>
+  </div>
+  <div class="gallery gallery--kuji" id="kuji-gallery"></div>
+
+  <!-- ===== Modal ===== -->
+  <div class="overlay" id="overlay">
+    <button class="m-arrow prev" id="m-prev" aria-label="前の商品">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="m-arrow next" id="m-next" aria-label="次の商品">
+      <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <button class="m-close" id="m-close" aria-label="閉じる">
+        <svg viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+      <div class="m-left">
+        <div class="m-imgwrap" id="m-imgwrap">
+          <img class="m-img" id="m-img" src="" alt="">
+        </div>
+        <div class="m-thumbs" id="m-thumbs"></div>
+      </div>
+      <div class="m-right">
+        <div class="m-info">
+          <div class="m-number" id="m-number"></div>
+          <div class="m-title" id="m-title"></div>
+          <div class="m-price" id="m-price"></div>
+          <div class="m-divider"></div>
+          <div class="m-desc" id="m-desc"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Notice ===== -->
+  <section class="text-section" id="goods-notice">
+
+    <div class="notice-heading">グッズ事前注文<br>会場受取の注意事項</div>
+
+    <div class="notebox">
+      <p>・本公演における事前通販は専用アプリによるご注文をお願いしております。</p>
+      <p>・事前にご購入いただいた商品は、公演当日に会場に設置される専用ブースにてお引き取りいただきます。</p>
+      <p>・アプリに表示される「QRコード」をご提示いただき、購入商品との引換となります。</p>
+      <p>・受付期間内であっても、在庫や時間枠が無くなり次第受付終了となります。</p>
+      <p>・受取時間等の詳細は後日発表いたします。</p>
+      <div class="highlight">
+        <p>※ご注文確定後の注文内容変更、お客様都合によるキャンセルはできません。<br>内容をお確かめの上、ご注文ください。</p>
+        <p>※ご自宅への配送はございませんのでご注意ください。</p>
+        <p>※当日会場販売もございます。</p>
+      </div>
+    </div>
+
+    <div class="steps-heading"><span class="sparkle">✦</span> 事前注文方法 <span class="sparkle">✦</span></div>
+
+    <div class="steps-list">
+      <a class="step-item" href="https://cielkocka.goods-order.com/" target="_blank" rel="noopener noreferrer">
+        <div class="step-num">STEP<span>1</span></div>
+        「cielkocka」アプリをダウンロードして会員登録
+      </a>
+      <div class="step-item">
+        <div class="step-num">STEP<span>2</span></div>
+        アプリ左下の「会場受取」から来場日時を選択
+      </div>
+      <div class="step-item">
+        <div class="step-num">STEP<span>3</span></div>
+        ご希望の商品・受取時間を選択したらお支払いへ
+      </div>
+      <div class="step-item">
+        <div class="step-num">STEP<span>4</span></div>
+        ご注文完了後はライブ開催までお待ちください
+      </div>
+    </div>
+
+    <div class="step-day">
+      <div class="day-label">当日</div><br>
+      会場近辺に到着したらアプリでチェックイン<br>
+      チェックイン後に表示される「QRコード」を<br>
+      専用ブースで提示して商品をお引き換えください
+    </div>
+
+    <div class="bullet-notes">
+      <p>・商品及び受取時間帯の選択は先着順・定員制となります。定員数に達し次第受付は終了となります。</p>
+      <p>・公演チケットをお持ちでない方も、商品受取時間内に受け取りが可能な場合はご購入いただけます。</p>
+      <p>・「cielkockaアプリ」cielkocka.goods-order.comの手順に沿って本人情報登録をお願いいたします。</p>
+      <p>・本人情報登録・商品購入方法についてはアプリ内TOP下部の「HOW TO USEアプリのご利用方法」をご確認ください。</p>
+      <p>・商品ご購入時に受取時間をご選択いただきます。</p>
+      <p>・商品受取時間を変更したい場合、選択されたお受取時間前で、かつ受付枠に空きがある場合に限り、お客様自身で変更可能です。</p>
+      <p>・会場受取の方は、グッズ販売列に並ぶ必要はありません。選択時間内にグッズ受取窓口に直接お越しください。</p>
+      <p>・会場に到着されましたらTOP画面の「会場にチェックイン」よりチェックインをお願いします。</p>
+      <p>・グッズ事前注文受取場所にてQRコードをご掲示いただき、選択された商品受取時間枠内で商品をお受け取りください。</p>
+      <p>・商品のお受け取りはご購入頂いたご本人様に限らせていただきます。</p>
+      <p>・グッズ事前注文受取場所にて本人確認を行いますので、本人確認が出来る物をご持参ください。</p>
+      <p>・開演中および終演後の受取はできません。</p>
+      <p>・指定した時間を過ぎてしまった場合、原則として商品の受取は行えません。</p>
+      <p>・お支払方法は、クレジットカード・PayPay・ペイディあと払いとさせていただきます。</p>
+      <p>・ご注文確定後の注文内容変更、お客様都合によるキャンセルはできません。</p>
+      <p>・お買い求めいただいた商品・サイズ・数量等は必ずその場でご確認ください。</p>
+      <p>・不良品の場合、受取当日（受取終了時間まで）に公演会場でのみ交換対応が可能です。後日のご対応はいかなる場合も一切できかねますので、必ず受取当日にご確認ください。</p>
+      <p>・不良交換をご希望の場合は、お客様のアプリ内の購入履歴を確認させていただきます。確認できない場合はいかなる理由を問わず返品・交換はいたしかねます。</p>
+      <p>・商品の返品交換対象は初期不良品のみです。パッケージの取り扱い説明に従わずに起きた不良・お客様都合による返品交換はできかねます。</p>
+      <p>・くじの景品はランダムです。景品の種類はお選びいただけません。また、景品の交換・返品はお受けできません。</p>
+      <p>・デザイン／仕様は変更となる場合がございます。あらかじめご了承ください。</p>
+      <p>・レジ袋等のご用意はございません。必要な方はご自身でご用意をお願いいたします。</p>
+      <p>・全ての商品は数に限りがあり、販売時間内でも無くなり次第終了となります。予めご了承ください。</p>
+
+      <div class="sub-heading">【商品未受取の場合】</div>
+      <p>選択受取日に会場受取ができなかった方につきましては、配送対応を行います。</p>
+      <p>配送希望の方は、公演終了後にアナウンスする受付期間中に、アプリ上で「未受取商品の配送」のお申し込みをお願いいたします。</p>
+      <p>※別途送料¥1,760(税込)をアプリ上で決済いただきます。</p>
+      <p>※受付期間内にお申し込みが確認できない場合は自動キャンセルとなり、ご返金はできかねます。予めご了承ください。</p>
+
+      <div class="sub-heading">【公演中止の場合】</div>
+      <p>やむを得ず開催を中止した場合は、配送受取に変更となりますので、予めご了承の上ご注文ください。</p>
+      <p>※別途送料¥880(税込)をアプリ上で決済いただきます。</p>
+    </div>
+  </section>
+
+  <div class="goods__back">
+    <a href="../index.html">← TOPへ戻る</a>
+  </div>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <p class="footer__copy">&copy; 2026 SORARU. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<script>
+/* ================================================================
+   ▼ 商品データ（2026/9/4 時点の商品一覧シートより。実施可否チェック済みのみ）
+   ・images に画像パスを追加するとカード・モーダルに表示される（先頭がメイン画像）
+       images:["img/01_penlight1.webp","img/01_penlight2.webp"]
+     画像は goods/img/ に置く（正方形推奨・1000px程度）。空配列 [] なら番号プレースホルダー表示
+   ・desc は \n で改行。【サイズ】【素材】などは決まり次第追記
+   ・tag:"DAY1限定" のように付けるとカード左上にタグ表示
+   ・カスタムパーツセットの価格はシートで未確定（赤字）
+================================================================ */
+const goods = [
+{ name:"カスタムペンライト", price:"¥6,000",
+    desc:"別売の「カスタムパーツセット」でカスタムデザインをお楽しみいただけます。\n\n【サイズ】後日追記\n【素材】後日追記",
+    images:[] },
+{ name:"カスタムパーツセット", price:"¥1,500",
+    desc:"カスタムペンライト専用のカスタムパーツセット。\n\n【サイズ】後日追記\n【素材】後日追記",
+    images:[] },
+{ name:"指パペット（これこれパペット）", price:"¥2,500",
+    desc:"指にはめて遊べる指パペット。\n\n【サイズ】後日追記\n【素材】後日追記",
+    images:[] },
+{ name:"アクリルスタンド", price:"¥1,800",
+    desc:"『Starhallow / Starveil』イラストのアクリルスタンド。\n\n【サイズ】後日追記\n【素材】アクリル",
+    images:[] },
+{ name:"クリアファイル", price:"¥400",
+    desc:"『Starhallow / Starveil』イラストのクリアファイル。\n\n【サイズ】後日追記\n【素材】PP",
+    images:[] },
+{ name:"ラバーバンド", price:"¥800",
+    desc:"ハロウィンライブをイメージしたラバーバンド。\n\n【サイズ】後日追記\n【素材】シリコン",
+    images:[] },
+{ name:"マフラータオル", price:"¥2,000",
+    desc:"ハロウィンライブをイメージしたマフラータオル。\n\n【サイズ】後日追記\n【素材】綿100%",
+    images:[] },
+{ name:"タロットカードセット", price:"¥6,000",
+    desc:"新規イラスト20枚＋キービジュアル3枚の全23枚セット。\n\n【サイズ】後日追記\n【素材】紙",
+    images:[] }
+];
+
+/* ================================================================
+   ▼ くじ景品データ（1回 ¥800）
+   ・rank: カード左上のラベル。top:true で特賞（金色）
+   ・kind: 種類数などの短い補足（カード下部に表示）
+================================================================ */
+const kuji = [
+{ rank:"特賞", top:true, name:"FLATLABO", kind:"全4種",
+    desc:"特賞。\n全4種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"特賞", top:true, name:"サイン入りチェキ風カード", kind:"全10種",
+    desc:"そらる直筆サイン入りのチェキ風カード。\n全10種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
+{ rank:"特賞", top:true, name:"アパレル", kind:"全2種",
+    desc:"特賞のアパレル。\n全2種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"A賞", name:"背骨矯正ぬい", kind:"全1種",
+    desc:"A賞。\n全1種。\n\n【サイズ】後日追記\n【素材】ポリエステル", images:[] },
+{ rank:"B賞", name:"スクイーズ", kind:"全2種",
+    desc:"B賞。\n全2種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"C賞", name:"タロットキーホルダー", kind:"全6種",
+    desc:"C賞。\n全6種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"D賞", name:"チェキ風カードA", kind:"全5種",
+    desc:"D賞。\n全5種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
+{ rank:"E賞", name:"チェキ風カードB", kind:"全5種",
+    desc:"E賞。\n全5種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
+{ rank:"F賞", name:"缶バッジセット", kind:"全3種（各2個入り）",
+    desc:"F賞。\n全3種・各2個入り。\n\n【サイズ】後日追記\n【素材】ブリキ", images:[] }
+];
+
+/* === Render Galleries === */
+const pad2 = n => String(n).padStart(2, '0');
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+// モーダル用の現在リスト
+let activeList = goods;
+let activeLabel = 'ITEM';
+
+function renderGallery(list, container, opts) {
+  list.forEach((g, i) => {
+    const el = document.createElement('div');
+    el.className = 'card' + (g.top ? ' card--top' : '');
+    const ph = opts.placeholder(g, i);
+    const img = g.images && g.images.length
+      ? `<div class="card__img" style="background-image:url('${g.images[0]}')"></div>`
+      : `<div class="card__img card__img--none"><span>${esc(ph)}</span></div>`;
+    const priceOrKind = opts.kuji
+      ? `<div class="card__kind">${esc(g.kind || '')}</div>`
+      : `<div class="card__price">${esc(g.price)}（税込）</div>`;
+    el.innerHTML = `
+      <div class="card__imgwrap">${g.rank ? `<span class="card__rank">${esc(g.rank)}</span>` : ''}${img}</div>
+      <div class="card__body">
+        ${g.tag ? `<div class="card__tag">${esc(g.tag)}</div>` : ''}
+        <div class="card__name">${esc(g.name)}</div>
+        ${priceOrKind}
+      </div>`;
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    const open = () => { activeList = list; activeLabel = opts.label; openModal(i); };
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    container.appendChild(el);
+  });
+}
+
+document.getElementById('lineup-count').textContent = `ALL ${goods.length} ITEMS`;
+document.getElementById('kuji-count').textContent = `ALL ${kuji.length} PRIZES`;
+renderGallery(goods, document.getElementById('gallery'), { label: 'ITEM', placeholder: (g, i) => pad2(i + 1) });
+renderGallery(kuji, document.getElementById('kuji-gallery'), { label: 'PRIZE', kuji: true, placeholder: g => g.rank === '特賞' ? 'S' : g.rank.charAt(0) });
+
+/* === Modal === */
+let currentIdx = 0;
+const overlay = document.getElementById('overlay');
+const modal = document.getElementById('modal');
+const mImg = document.getElementById('m-img');
+const mImgWrap = document.getElementById('m-imgwrap');
+const mThumbs = document.getElementById('m-thumbs');
+
+function openModal(idx) {
+  currentIdx = idx;
+  renderModal(idx);
+  overlay.classList.remove('fade-out');
+  overlay.classList.add('active', 'fade-in');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  overlay.classList.remove('fade-in');
+  overlay.classList.add('fade-out');
+  setTimeout(() => {
+    overlay.classList.remove('active', 'fade-out');
+    document.body.style.overflow = '';
+  }, 250);
+}
+function renderModal(idx) {
+  const g = activeList[idx];
+  const hasImg = g.images && g.images.length;
+
+  // main image or placeholder
+  const oldPh = mImgWrap.querySelector('.card__img--none');
+  if (oldPh) oldPh.remove();
+  if (hasImg) {
+    mImg.style.display = '';
+    mImg.src = g.images[0];
+    mImg.alt = g.name;
+  } else {
+    mImg.style.display = 'none';
+    mImg.removeAttribute('src');
+    const ph = document.createElement('div');
+    ph.className = 'card__img card__img--none';
+    ph.innerHTML = `<span>${esc(g.rank ? (g.rank === '特賞' ? 'S' : g.rank.charAt(0)) : pad2(idx + 1))}</span>`;
+    mImgWrap.appendChild(ph);
+  }
+
+  document.getElementById('m-number').textContent = `${activeLabel} ${pad2(idx + 1)} / ${pad2(activeList.length)}`;
+  document.getElementById('m-title').innerHTML =
+    (g.rank ? `<span class="card__rank">${esc(g.rank)}</span>` : '') +
+    (g.tag ? `<span class="card__tag">${esc(g.tag)}</span>` : '') + esc(g.name);
+  document.getElementById('m-price').innerHTML = g.price
+    ? esc(g.price) + '（税込）'
+    : 'ハロウィンくじ 1回 ¥800（税込）' + (g.kind ? `<small class="m-kind">${esc(g.kind)}</small>` : '');
+  document.getElementById('m-desc').textContent = g.desc || '';
+  modal.classList.toggle('is-top', !!g.top);
+
+  mThumbs.innerHTML = '';
+  if (hasImg && g.images.length > 1) {
+    g.images.forEach((src, ti) => {
+      const t = document.createElement('div');
+      t.className = 'thumb' + (ti === 0 ? ' active' : '');
+      t.innerHTML = `<img src="${src}" alt="">`;
+      t.addEventListener('click', e => {
+        e.stopPropagation();
+        mImg.src = src;
+        mThumbs.querySelectorAll('.thumb').forEach(th => th.classList.remove('active'));
+        t.classList.add('active');
+      });
+      mThumbs.appendChild(t);
+    });
+  }
+  modal.scrollTop = 0;
+  const right = modal.querySelector('.m-right'); if (right) right.scrollTop = 0;
+}
+function navItem(dir) {
+  currentIdx = (currentIdx + dir + activeList.length) % activeList.length;
+  renderModal(currentIdx);
+}
+document.getElementById('m-close').addEventListener('click', closeModal);
+document.getElementById('m-prev').addEventListener('click', e => { e.stopPropagation(); navItem(-1); });
+document.getElementById('m-next').addEventListener('click', e => { e.stopPropagation(); navItem(1); });
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => {
+  if (!overlay.classList.contains('active')) return;
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft') navItem(-1);
+  if (e.key === 'ArrowRight') navItem(1);
+});
+
+/* swipe on modal (SP) */
+(function () {
+  let sx = 0, sy = 0, on = false;
+  modal.addEventListener('touchstart', e => { if (e.touches.length !== 1) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; on = true; }, { passive: true });
+  modal.addEventListener('touchend', e => {
+    if (!on) return; on = false;
+    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) navItem(dx < 0 ? 1 : -1);
+  });
+})();
+</script>
+<script src="../js/script.js"></script>
+</body>
+</html>
