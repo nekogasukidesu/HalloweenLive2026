@@ -127,6 +127,7 @@
 .lineup-head__deco .line { width: 40px; height: 1px; background: linear-gradient(90deg, transparent, var(--d1-gold)); }
 .lineup-head__deco .line:last-child { background: linear-gradient(90deg, var(--d1-gold), transparent); }
 .lineup-head__deco .dot { width: 5px; height: 5px; background: var(--d1-gold); transform: rotate(45deg); }
+.lineup-head__main--jp { font-family: "Noto Sans JP", sans-serif; font-weight: 900; letter-spacing: .3em; }
 .lineup-head__count { margin-top: 14px; font-family: "Cinzel", serif; font-size: .7rem; letter-spacing: .3em; color: var(--text-dim); }
 
 /* ===== Gallery ===== */
@@ -463,8 +464,8 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
 
   <!-- ===== Kuji lineup ===== -->
   <div class="lineup-head lineup-head--kuji" id="kuji">
-    <div class="lineup-head__sub">HALLOWEEN KUJI</div>
-    <h2 class="lineup-head__main">KUJI LINEUP</h2>
+    <div class="lineup-head__sub">STAR KUJI LINEUP</div>
+    <h2 class="lineup-head__main lineup-head__main--jp">星くじ</h2>
     <div class="lineup-head__deco"><div class="line"></div><div class="dot"></div><div class="line"></div></div>
     <p class="kuji-price">1回 <strong>¥800</strong><small>(税込)</small></p>
     <p class="kuji-lead">特賞・A賞〜F賞のいずれかが必ず当たります。<br>景品の種類はお選びいただけません。</p>
@@ -568,7 +569,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
       <p>・不良品の場合、受取当日（受取終了時間まで）に公演会場でのみ交換対応が可能です。後日のご対応はいかなる場合も一切できかねますので、必ず受取当日にご確認ください。</p>
       <p>・不良交換をご希望の場合は、お客様のアプリ内の購入履歴を確認させていただきます。確認できない場合はいかなる理由を問わず返品・交換はいたしかねます。</p>
       <p>・商品の返品交換対象は初期不良品のみです。パッケージの取り扱い説明に従わずに起きた不良・お客様都合による返品交換はできかねます。</p>
-      <p>・くじの景品はランダムです。景品の種類はお選びいただけません。また、景品の交換・返品はお受けできません。</p>
+      <p>・星くじの景品はランダムです。景品の種類はお選びいただけません。また、景品の交換・返品はお受けできません。</p>
       <p>・デザイン／仕様は変更となる場合がございます。あらかじめご了承ください。</p>
       <p>・レジ袋等のご用意はございません。必要な方はご自身でご用意をお願いいたします。</p>
       <p>・全ての商品は数に限りがあり、販売時間内でも無くなり次第終了となります。予めご了承ください。</p>
@@ -604,20 +605,16 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
      画像は goods/img/ に置く（正方形推奨・1000px程度）。空配列 [] なら番号プレースホルダー表示
    ・desc は \n で改行。【サイズ】【素材】などは決まり次第追記
    ・tag:"DAY1限定" のように付けるとカード左上にタグ表示
-   ・カスタムパーツセットの価格はシートで未確定（赤字）
 ================================================================ */
 const goods = [
-{ name:"カスタムペンライト", price:"¥6,000",
-    desc:"別売の「カスタムパーツセット」でカスタムデザインをお楽しみいただけます。\n\n【サイズ】後日追記\n【素材】後日追記",
+{ name:"星灯りランタン ペンライト", price:"¥6,000",
+    desc:"星灯りのランタンをモチーフにしたペンライト。\n\n【サイズ】後日追記\n【素材】後日追記",
     images:[] },
-{ name:"カスタムパーツセット", price:"¥1,500",
-    desc:"カスタムペンライト専用のカスタムパーツセット。\n\n【サイズ】後日追記\n【素材】後日追記",
+{ name:"ゆびぱぺそらる", price:"¥2,500",
+    desc:"指にはめて遊べる、そらるの指パペット。\n\n【サイズ】後日追記\n【素材】後日追記",
     images:[] },
-{ name:"指パペット（これこれパペット）", price:"¥2,500",
-    desc:"指にはめて遊べる指パペット。\n\n【サイズ】後日追記\n【素材】後日追記",
-    images:[] },
-{ name:"アクリルスタンド", price:"¥1,800",
-    desc:"『Starhallow / Starveil』イラストのアクリルスタンド。\n\n【サイズ】後日追記\n【素材】アクリル",
+{ name:"スターハロウ アクリルスタンド", price:"¥1,800",
+    desc:"『Starhallow』イラストのアクリルスタンド。\n\n【サイズ】後日追記\n【素材】アクリル",
     images:[] },
 { name:"クリアファイル", price:"¥400",
     desc:"『Starhallow / Starveil』イラストのクリアファイル。\n\n【サイズ】後日追記\n【素材】PP",
@@ -625,38 +622,49 @@ const goods = [
 { name:"ラバーバンド", price:"¥800",
     desc:"ハロウィンライブをイメージしたラバーバンド。\n\n【サイズ】後日追記\n【素材】シリコン",
     images:[] },
-{ name:"マフラータオル", price:"¥2,000",
-    desc:"ハロウィンライブをイメージしたマフラータオル。\n\n【サイズ】後日追記\n【素材】綿100%",
+{ name:"小悪魔マフラータオル", price:"¥2,000",
+    desc:"小悪魔デザインのマフラータオル。\n\n【サイズ】後日追記\n【素材】綿100%",
     images:[] },
-{ name:"タロットカードセット", price:"¥6,000",
-    desc:"新規イラスト20枚＋キービジュアル3枚の全23枚セット。\n\n【サイズ】後日追記\n【素材】紙",
+{ name:"ライブロゴTシャツ", price:"",
+    desc:"ライブロゴをあしらったTシャツ。\n\n【サイズ】後日追記\n【素材】後日追記",
+    images:[] },
+{ name:"そらるの星詠みタロット（22枚セット）", price:"¥6,000",
+    desc:"そらるの星詠みタロット。全22枚セット。\n\n【サイズ】後日追記\n【素材】紙",
+    images:[] },
+{ tag:"事後販売", name:"SD アクキー", price:"",
+    desc:"SDイラストのアクリルキーホルダー。\n※公演後の事後販売となります。\n\n【サイズ】後日追記\n【素材】アクリル",
+    images:[] },
+{ tag:"事後販売", name:"パンフレット", price:"¥2,200",
+    desc:"ライブパンフレット。\n※公演後の事後販売となります。\n\n【サイズ】後日追記\n【素材】紙",
     images:[] }
 ];
 
 /* ================================================================
-   ▼ くじ景品データ（1回 ¥800）
+   ▼ 星くじ 景品データ（1回 ¥800）
    ・rank: カード左上のラベル。top:true で特賞（金色）
    ・kind: 種類数などの短い補足（カード下部に表示）
 ================================================================ */
 const kuji = [
-{ rank:"特賞", top:true, name:"FLATLABO", kind:"全4種",
-    desc:"特賞。\n全4種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"特賞", top:true, name:"サイン入りプレミアムアートワークパネル", kind:"全4種",
+    desc:"そらる直筆サイン入りのプレミアムアートワークパネル。\n全4種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
 { rank:"特賞", top:true, name:"サイン入りチェキ風カード", kind:"全10種",
     desc:"そらる直筆サイン入りのチェキ風カード。\n全10種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
-{ rank:"特賞", top:true, name:"アパレル", kind:"全2種",
-    desc:"特賞のアパレル。\n全2種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
-{ rank:"A賞", name:"背骨矯正ぬい", kind:"全1種",
-    desc:"A賞。\n全1種。\n\n【サイズ】後日追記\n【素材】ポリエステル", images:[] },
-{ rank:"B賞", name:"スクイーズ", kind:"全2種",
-    desc:"B賞。\n全2種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
-{ rank:"C賞", name:"タロットキーホルダー", kind:"全6種",
-    desc:"C賞。\n全6種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
-{ rank:"D賞", name:"チェキ風カードA", kind:"全5種",
-    desc:"D賞。\n全5種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
-{ rank:"E賞", name:"チェキ風カードB", kind:"全5種",
-    desc:"E賞。\n全5種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
-{ rank:"F賞", name:"缶バッジセット", kind:"全3種（各2個入り）",
-    desc:"F賞。\n全3種・各2個入り。\n\n【サイズ】後日追記\n【素材】ブリキ", images:[] }
+{ rank:"特賞", top:true, name:"スターヴェール ブルゾン", kind:"全1種",
+    desc:"『Starveil』をイメージしたブルゾン。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"特賞", top:true, name:"スターハロウ ジャケット", kind:"全1種",
+    desc:"『Starhallow』をイメージしたジャケット。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"A賞", name:"猫背そらる（狼）", kind:"全1種",
+    desc:"猫背そらる（狼）のぬいぐるみ。\n\n【サイズ】後日追記\n【素材】ポリエステル", images:[] },
+{ rank:"B賞", name:"タロットキーホルダー", kind:"全4種（魔術師・運命の輪・星・世界）",
+    desc:"タロットモチーフのキーホルダー。\n全4種（魔術師・運命の輪・星・世界）。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"C賞", name:"もっちりそらる／もっちりはんぺん", kind:"全2種",
+    desc:"もっちりそらる／もっちりはんぺん。\n全2種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"D賞", name:"スターヴェール チェキ風カード", kind:"全5種",
+    desc:"『Starveil』のチェキ風カード。\n全5種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
+{ rank:"E賞", name:"スターハロウ チェキ風カード", kind:"全5種",
+    desc:"『Starhallow』のチェキ風カード。\n全5種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
+{ rank:"F賞", name:"ミニそらる缶バッジセット", kind:"全3種（各2個入り）",
+    desc:"ミニそらるの缶バッジセット。\n全3種・各2個入り。\n\n【サイズ】後日追記\n【素材】ブリキ", images:[] }
 ];
 
 /* === Render Galleries === */
@@ -666,6 +674,7 @@ const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>
 // モーダル用の現在リスト
 let activeList = goods;
 let activeLabel = 'ITEM';
+let activeKuji = false;
 
 function renderGallery(list, container, opts) {
   list.forEach((g, i) => {
@@ -677,7 +686,7 @@ function renderGallery(list, container, opts) {
       : `<div class="card__img card__img--none"><span>${esc(ph)}</span></div>`;
     const priceOrKind = opts.kuji
       ? `<div class="card__kind">${esc(g.kind || '')}</div>`
-      : `<div class="card__price">${esc(g.price)}（税込）</div>`;
+      : `<div class="card__price">${g.price ? esc(g.price) + '（税込）' : '価格は後日発表'}</div>`;
     el.innerHTML = `
       <div class="card__imgwrap">${g.rank ? `<span class="card__rank">${esc(g.rank)}</span>` : ''}${img}</div>
       <div class="card__body">
@@ -687,7 +696,7 @@ function renderGallery(list, container, opts) {
       </div>`;
     el.setAttribute('role', 'button');
     el.setAttribute('tabindex', '0');
-    const open = () => { activeList = list; activeLabel = opts.label; openModal(i); };
+    const open = () => { activeList = list; activeLabel = opts.label; activeKuji = !!opts.kuji; openModal(i); };
     el.addEventListener('click', open);
     el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
     container.appendChild(el);
@@ -746,9 +755,9 @@ function renderModal(idx) {
   document.getElementById('m-title').innerHTML =
     (g.rank ? `<span class="card__rank">${esc(g.rank)}</span>` : '') +
     (g.tag ? `<span class="card__tag">${esc(g.tag)}</span>` : '') + esc(g.name);
-  document.getElementById('m-price').innerHTML = g.price
-    ? esc(g.price) + '（税込）'
-    : 'ハロウィンくじ 1回 ¥800（税込）' + (g.kind ? `<small class="m-kind">${esc(g.kind)}</small>` : '');
+  document.getElementById('m-price').innerHTML = activeKuji
+    ? '星くじ 1回 ¥800（税込）' + (g.kind ? `<small class="m-kind">${esc(g.kind)}</small>` : '')
+    : (g.price ? esc(g.price) + '（税込）' : '価格は後日発表');
   document.getElementById('m-desc').textContent = g.desc || '';
   modal.classList.toggle('is-top', !!g.top);
 
