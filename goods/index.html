@@ -163,6 +163,7 @@
   font-size: .62rem; font-weight: 700; letter-spacing: .1em; padding: 1px 10px; border-radius: 999px;
   border: 1px solid var(--d1-gold); color: var(--d1-gold); background: rgba(233,179,90,.1);
 }
+.card__tag--day2 { border-color: var(--d2-lt); color: var(--d2-lt); background: rgba(111,198,255,.1); }
 .card__name { font-size: .88rem; font-weight: 500; line-height: 1.7; color: var(--text); margin-bottom: 6px;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .card__price { margin-top: auto; font-size: .92rem; font-weight: 700; color: var(--d1-gold); letter-spacing: .03em; }
@@ -649,10 +650,10 @@ const kuji = [
     desc:"そらる直筆サイン入りのプレミアムアートワークパネル。\n全4種。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
 { rank:"特賞", top:true, name:"サイン入りチェキ風カード", kind:"全10種",
     desc:"そらる直筆サイン入りのチェキ風カード。\n全10種。\n\n【サイズ】後日追記\n【素材】紙", images:[] },
-{ rank:"特賞", top:true, name:"スターハロウ ブルゾン", kind:"全1種",
-    desc:"『Starhallow』をイメージしたブルゾン。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
-{ rank:"特賞", top:true, name:"スターヴェール ジャケット", kind:"全1種",
-    desc:"『Starveil』をイメージしたジャケット。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"特賞", top:true, tag:"DAY1", name:"スターハロウ ブルゾン", kind:"全1種",
+    desc:"DAY1『Starhallow』をイメージしたブルゾン。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
+{ rank:"特賞", top:true, tag:"DAY2", name:"スターヴェール ジャケット", kind:"全1種",
+    desc:"DAY2『Starveil』をイメージしたジャケット。\n\n【サイズ】後日追記\n【素材】後日追記", images:[] },
 { rank:"A賞", name:"猫背そらる（狼）", kind:"全1種",
     desc:"猫背そらる（狼）のぬいぐるみ。\n\n【サイズ】後日追記\n【素材】ポリエステル", images:[] },
 { rank:"B賞", name:"タロットキーホルダー", kind:"全4種（魔術師・運命の輪・星・世界）",
@@ -690,7 +691,7 @@ function renderGallery(list, container, opts) {
     el.innerHTML = `
       <div class="card__imgwrap">${g.rank ? `<span class="card__rank">${esc(g.rank)}</span>` : ''}${img}</div>
       <div class="card__body">
-        ${g.tag ? `<div class="card__tag">${esc(g.tag)}</div>` : ''}
+        ${g.tag ? `<div class="card__tag${g.tag === 'DAY2' ? ' card__tag--day2' : ''}">${esc(g.tag)}</div>` : ''}
         <div class="card__name">${esc(g.name)}</div>
         ${priceOrKind}
       </div>`;
@@ -754,7 +755,7 @@ function renderModal(idx) {
   document.getElementById('m-number').textContent = `${activeLabel} ${pad2(idx + 1)} / ${pad2(activeList.length)}`;
   document.getElementById('m-title').innerHTML =
     (g.rank ? `<span class="card__rank">${esc(g.rank)}</span>` : '') +
-    (g.tag ? `<span class="card__tag">${esc(g.tag)}</span>` : '') + esc(g.name);
+    (g.tag ? `<span class="card__tag${g.tag === 'DAY2' ? ' card__tag--day2' : ''}">${esc(g.tag)}</span>` : '') + esc(g.name);
   document.getElementById('m-price').innerHTML = activeKuji
     ? '星くじ 1回 ¥800（税込）' + (g.kind ? `<small class="m-kind">${esc(g.kind)}</small>` : '')
     : (g.price ? esc(g.price) + '（税込）' : '価格は後日発表');
