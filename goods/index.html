@@ -101,7 +101,9 @@
 .bonus__head { font-weight: 700; font-size: clamp(1rem, 2.4vw, 1.2rem); line-height: 1.7; }
 .bonus__head .yen { font-family: "Cinzel", serif; font-weight: 700; font-size: 1.7em; color: #f0ecdd; margin: 0 .1em; }
 .bonus__head mark { background: rgba(233,179,90,.25); color: var(--d1-gold); padding: .05em .3em; font-weight: 900; }
-.bonus__note { margin-top: .6rem; font-size: .76rem; color: var(--text-dim); line-height: 1.8; }
+.bonus__inner { flex: 1; }
+.bonus__head--sub { margin-top: .9rem; padding-top: .9rem; border-top: 1px dashed rgba(233,179,90,.3); }
+.bonus__note { margin-top: .9rem; font-size: .76rem; color: var(--text-dim); line-height: 1.8; }
 
 .appbtn {
   display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap;
@@ -314,6 +316,11 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
   .bonus { padding: 20px 18px; }
 }
 @media (max-width: 540px) {
+  .info__bar { letter-spacing: .15em; font-size: .92rem; padding: 12px 14px; }
+  .info__bar .sp { display: none; }
+  .preorder__date .arrow { display: none; }
+  .preorder__from, .preorder__to { display: block; white-space: nowrap; }
+  .preorder__to::before { content: "↓"; display: block; font-family: "Noto Sans JP"; font-size: .55em; line-height: 1.2; color: var(--d1-gold); }
   .lineup-head { padding: 44px 16px 24px; }
   .lineup-head--kuji { padding-top: 16px; }
   .lineup-head--kuji::before { margin-bottom: 44px; }
@@ -329,6 +336,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
   .app-icon { width: 72px; height: 72px; border-radius: 18px; font-size: 1rem; }
   .appbtn .app-icon { width: 84px; height: 84px; border-radius: 20px; font-size: 1.2rem; }
   .appbtn__text { padding: 14px 22px; }
+  .appbtn__text::before { left: 50%; top: -12px; transform: translateX(-50%); border: 12px solid transparent; border-bottom-color: var(--d2-lt); border-top: 0; }
   /* SP modal: vertical */
   .modal { flex-direction: column; width: calc(100% - 24px); max-width: 360px; max-height: 94vh; }
   .m-left { flex: 0 0 auto; width: 100%; }
@@ -393,7 +401,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
   <!-- ===== Info: 事前注文 / 会場販売 ===== -->
   <!--
     ▼ 受付期間が決まったら .preorder__date を以下の形式に差し替え（is-soon を外す）:
-      <p class="preorder__date">10.10<span class="day">土</span>18:00<span class="arrow">→</span>10.25<span class="day">日</span>23:59</p>
+      <p class="preorder__date"><span class="preorder__from">10.10<span class="day">土</span>18:00</span><span class="arrow">→</span><span class="preorder__to">10.25<span class="day">日</span>23:59</span></p>
     ▼ 受取時間・当日販売時間が決まったら .sched__tbd を .sched__time に差し替え:
       <span class="sched__time">13:00〜17:00</span>
       <span class="sched__time">13:00〜<small>終演後30分程度まで</small></span>
@@ -405,7 +413,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
       <div class="preorder">
         <div class="app-icon">Cielkocka</div>
         <div class="preorder__body">
-          <p class="preorder__date is-soon">COMING SOON</p>
+          <p class="preorder__date"><span class="preorder__from">9.18<span class="day">金</span>18:00</span><span class="arrow">→</span><span class="preorder__to">10.29<span class="day">木</span>23:59</span></p>
           <p class="preorder__sub">cielkocka アプリにて受付</p>
         </div>
       </div>
@@ -427,15 +435,15 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
         </div>
       </div>
 
-      <!-- ▼ 購入特典が決まったらコメントを外して内容を編集
+      <!-- ▼ 購入特典（トレカクリアカードのデザインは後日公開） -->
       <div class="bonus">
-        <div>
+        <div class="bonus__inner">
           <span class="bonus__label">グッズ事前注文 購入特典</span>
-          <p class="bonus__head">ご購入金額税込 <span class="yen">¥5,000</span> 毎に<br><mark>レプリカチケット</mark> を1枚プレゼント！</p>
-          <p class="bonus__note">※お会計が税込10,000円の場合、2枚お渡しとなります。<br>※複数会計 合算不可となります。<br>※受取日時によってデザインは異なります。</p>
+          <p class="bonus__head">ご購入金額税込 <span class="yen">¥5,000</span> 毎に<br><mark>トレカクリアカード</mark> を1枚プレゼント！</p>
+          <p class="bonus__head bonus__head--sub">ご購入金額税込 <span class="yen">¥10,000</span> 以上で<br><mark>ハイタッチ会参加券</mark> を1枚プレゼント！</p>
+          <p class="bonus__note">※お会計が税込10,000円の場合、トレカクリアカードは2枚お渡しとなります。<br>※複数会計 合算不可となります。<br>※トレカクリアカードのデザインは後日公開いたします。<br>※ハイタッチ会の詳細は後日発表いたします。</p>
         </div>
       </div>
-      -->
 
       <a class="appbtn" href="https://cielkocka.goods-order.com/" target="_blank" rel="noopener noreferrer">
         <div class="app-icon">Cielkocka</div>
