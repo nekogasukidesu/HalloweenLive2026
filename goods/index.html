@@ -50,9 +50,8 @@
 .info__bar {
   text-align: center; padding: 14px 20px; border-radius: 6px;
   background: var(--d1-gold); color: #1a0f08;
-  font-weight: 900; letter-spacing: .3em; font-size: clamp(.95rem, 2.6vw, 1.2rem);
+  font-weight: 700; letter-spacing: .14em; font-size: clamp(.9rem, 2.2vw, 1.05rem);
 }
-.info__bar .sp { color: #1a0f08; opacity: .55; margin: 0 .5em; }
 
 .preorder {
   display: flex; align-items: center; justify-content: center; gap: 22px;
@@ -62,45 +61,42 @@
   width: 88px; height: 88px; border-radius: 22px; flex-shrink: 0;
   background: #fff; color: #4a7090;
   display: flex; align-items: center; justify-content: center;
-  font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500; font-size: 1.25rem;
+  font-family: "Noto Sans JP", sans-serif; font-weight: 700; font-size: .95rem; letter-spacing: .02em;
   box-shadow: 0 6px 24px rgba(0,0,0,.35);
 }
 .preorder__body { text-align: center; }
 .preorder__date {
-  font-family: "Cinzel", serif; font-weight: 700; letter-spacing: .05em;
-  font-size: clamp(1.5rem, 4.6vw, 2.5rem); line-height: 1.2; color: #f0ecdd;
+  font-weight: 700; letter-spacing: .02em;
+  font-size: clamp(1.4rem, 4vw, 2.1rem); line-height: 1.3; color: #f0ecdd;
 }
-.preorder__date .day { font-family: "Noto Sans JP"; font-size: .45em; font-weight: 700; letter-spacing: 0; vertical-align: middle;
-  display: inline-block; width: 1.9em; height: 1.9em; line-height: 1.9em; border-radius: 50%; background: var(--d1-gold); color: #1a0f08; margin: 0 .25em; }
-.preorder__date .arrow { color: var(--d1-gold); margin: 0 .3em; font-family: "Noto Sans JP"; }
-.preorder__date.is-soon { letter-spacing: .25em; font-size: clamp(1.4rem, 4vw, 2rem); }
-.preorder__sub { margin-top: .4rem; font-weight: 700; letter-spacing: .12em; font-size: clamp(.9rem, 2.2vw, 1.1rem); color: var(--text); }
+.preorder__date .day { font-size: .5em; font-weight: 500; letter-spacing: 0; vertical-align: middle;
+  display: inline-block; width: 1.9em; height: 1.9em; line-height: 1.8em; border-radius: 50%; border: 1px solid rgba(244,241,255,.35); color: var(--text); margin: 0 .3em; }
+.preorder__date .arrow { color: var(--text-dim); margin: 0 .35em; font-weight: 400; }
+.preorder__date.is-soon { letter-spacing: .2em; font-size: clamp(1.3rem, 3.6vw, 1.8rem); }
+.preorder__sub { margin-top: .3rem; font-weight: 500; letter-spacing: .06em; font-size: clamp(.9rem, 2.2vw, 1rem); color: var(--text-dim); }
 
 .sched { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 6px; }
 .sched__col { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .sched__head {
-  text-align: center; padding: 12px 14px; font-weight: 700; letter-spacing: .12em; font-size: .9rem; line-height: 1.6;
-  color: #1a0f08; background: var(--d1-gold);
+  text-align: center; padding: 12px 14px; font-weight: 700; letter-spacing: .06em; font-size: .88rem; line-height: 1.6;
+  color: var(--text); background: rgba(255,255,255,.06); border-bottom: 1px solid var(--line);
 }
-.sched__col--venue .sched__head { background: var(--d2-lt); }
 .sched__body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; }
 .sched__row { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
-.sched__date { font-family: "Cinzel", serif; font-weight: 700; font-size: 1.5rem; letter-spacing: .03em; color: #f0ecdd; line-height: 1; }
-.sched__day { display: inline-block; width: 1.7em; height: 1.7em; line-height: 1.7em; text-align: center; border-radius: 50%; font-size: .78rem; font-weight: 700; background: #f0ecdd; color: #1a0f08; }
-.sched__day--sat { background: var(--d2-lt); }
-.sched__day--sun { background: var(--d1-lt); }
-.sched__time { font-weight: 700; font-size: 1.05rem; letter-spacing: .04em; }
+.sched__date { font-weight: 700; font-size: 1.3rem; letter-spacing: .02em; color: #f0ecdd; line-height: 1; }
+.sched__day { display: inline-block; width: 1.8em; height: 1.8em; line-height: 1.7em; text-align: center; border-radius: 50%; font-size: .74rem; font-weight: 500; border: 1px solid rgba(244,241,255,.35); color: var(--text); }
+.sched__time { font-weight: 700; font-size: 1rem; letter-spacing: .02em; }
 .sched__time small { display: block; font-weight: 400; font-size: .72rem; color: var(--text-dim); letter-spacing: 0; }
-.sched__tbd { font-weight: 700; font-size: .95rem; letter-spacing: .1em; color: var(--text-dim); }
+.sched__tbd { font-weight: 500; font-size: .92rem; letter-spacing: .04em; color: var(--text-dim); }
 
 .bonus {
   margin-top: 18px; background: var(--panel); border: 1px solid rgba(233,179,90,.35); border-radius: 14px;
   padding: 24px 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
 }
-.bonus__label { display: inline-block; padding: .3rem 1.2rem; border-radius: 999px; background: var(--d1-gold); color: #1a0f08; font-weight: 700; font-size: .82rem; letter-spacing: .1em; margin-bottom: .8rem; }
-.bonus__head { font-weight: 700; font-size: clamp(1rem, 2.4vw, 1.2rem); line-height: 1.7; }
-.bonus__head .yen { font-family: "Cinzel", serif; font-weight: 700; font-size: 1.7em; color: #f0ecdd; margin: 0 .1em; }
-.bonus__head mark { background: rgba(233,179,90,.25); color: var(--d1-gold); padding: .05em .3em; font-weight: 900; }
+.bonus__label { display: inline-block; padding: .2rem .7rem; border-radius: 4px; border: 1px solid var(--d1-gold); color: var(--d1-gold); background: rgba(233,179,90,.1); font-weight: 700; font-size: .74rem; letter-spacing: .08em; margin-bottom: .8rem; }
+.bonus__head { font-weight: 700; font-size: clamp(.98rem, 2.3vw, 1.12rem); line-height: 1.8; }
+.bonus__head .yen { font-weight: 700; font-size: 1.3em; color: #f0ecdd; margin: 0 .08em; }
+.bonus__head mark { background: rgba(233,179,90,.22); color: var(--d1-gold); padding: .05em .3em; font-weight: 700; }
 .bonus__inner { flex: 1; }
 .bonus__head--sub { margin-top: .9rem; padding-top: .9rem; border-top: 1px dashed rgba(233,179,90,.3); }
 .bonus__note { margin-top: .9rem; font-size: .76rem; color: var(--text-dim); line-height: 1.8; }
@@ -109,11 +105,11 @@
   display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap;
   margin: 34px auto 0; max-width: 700px;
 }
-.appbtn .app-icon { width: 104px; height: 104px; border-radius: 26px; font-size: 1.5rem; }
+.appbtn .app-icon { width: 104px; height: 104px; border-radius: 26px; font-size: 1.1rem; }
 .appbtn__text {
   position: relative; padding: 20px 40px; border-radius: 10px;
-  background: var(--d2-lt); color: #0b1a2c; font-weight: 900; letter-spacing: .12em;
-  font-size: clamp(1rem, 2.8vw, 1.45rem); line-height: 1.6; text-align: center;
+  background: var(--d2-lt); color: #0b1a2c; font-weight: 700; letter-spacing: .06em;
+  font-size: clamp(.95rem, 2.4vw, 1.2rem); line-height: 1.6; text-align: center;
   transition: transform .25s var(--ease), box-shadow .25s var(--ease);
 }
 .appbtn__text::before { content: ""; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-right-color: var(--d2-lt); border-left: 0; }
@@ -121,14 +117,14 @@
 
 /* ===== Lineup header ===== */
 .lineup-head { text-align: center; padding: 64px 20px 32px; }
-.lineup-head__sub { font-size: .7rem; letter-spacing: .45em; color: var(--text-dim); margin-bottom: 14px; }
+.lineup-head__sub { font-size: .7rem; letter-spacing: .3em; color: var(--text-dim); margin-bottom: 14px; }
 .lineup-head__main { font-family: "Cinzel", serif; font-weight: 700; letter-spacing: .35em; font-size: clamp(1.6rem, 5vw, 2.4rem); color: #f0ecdd; }
 .lineup-head__deco { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; }
 .lineup-head__deco .line { width: 40px; height: 1px; background: linear-gradient(90deg, transparent, var(--d1-gold)); }
 .lineup-head__deco .line:last-child { background: linear-gradient(90deg, var(--d1-gold), transparent); }
 .lineup-head__deco .dot { width: 5px; height: 5px; background: var(--d1-gold); transform: rotate(45deg); }
-.lineup-head__main--jp { font-family: "Noto Sans JP", sans-serif; font-weight: 900; letter-spacing: .3em; }
-.lineup-head__count { margin-top: 14px; font-family: "Cinzel", serif; font-size: .7rem; letter-spacing: .3em; color: var(--text-dim); }
+.lineup-head__main--jp { font-family: "Noto Sans JP", sans-serif; font-weight: 700; letter-spacing: .22em; }
+.lineup-head__count { margin-top: 14px; font-size: .7rem; letter-spacing: .25em; color: var(--text-dim); }
 
 /* ===== Gallery ===== */
 .gallery {
@@ -156,11 +152,11 @@
     radial-gradient(60% 60% at 75% 75%, rgba(111,198,255,.14), transparent 70%),
     var(--bg-2);
 }
-.card__img--none span { font-family: "Cinzel", serif; font-weight: 700; letter-spacing: .25em; font-size: 2.2rem; color: rgba(244,241,255,.18); }
+.card__img--none span { font-weight: 500; letter-spacing: .15em; font-size: 2rem; color: rgba(244,241,255,.16); }
 .card__body { padding: 14px 16px 18px; display: flex; flex-direction: column; flex: 1; min-height: 88px; }
 .card__tag {
   display: inline-block; align-self: flex-start; margin-bottom: 6px;
-  font-size: .62rem; font-weight: 700; letter-spacing: .1em; padding: 1px 10px; border-radius: 999px;
+  font-size: .64rem; font-weight: 700; letter-spacing: .08em; padding: 2px 8px; border-radius: 4px;
   border: 1px solid var(--d1-gold); color: var(--d1-gold); background: rgba(233,179,90,.1);
 }
 .card__tag--day2 { border-color: var(--d2-lt); color: var(--d2-lt); background: rgba(111,198,255,.1); }
@@ -175,14 +171,14 @@
   background: linear-gradient(90deg, transparent, var(--line), transparent);
 }
 .kuji-price { margin-top: 22px; font-size: 1rem; color: var(--text-dim); letter-spacing: .06em; }
-.kuji-price strong { font-family: "Cinzel", serif; font-weight: 700; font-size: 2.4rem; color: #f0ecdd; margin: 0 .1em; line-height: 1; }
+.kuji-price strong { font-weight: 700; font-size: 1.9rem; color: #f0ecdd; margin: 0 .1em; line-height: 1; }
 .kuji-price small { font-size: .75rem; }
 .kuji-lead { margin-top: .6rem; font-size: .88rem; color: var(--text-dim); line-height: 1.9; }
 .gallery--kuji { grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .card__rank {
   position: absolute; top: 10px; left: 10px; z-index: 2;
-  font-family: "Cinzel", serif; font-weight: 700; font-size: .7rem; letter-spacing: .1em;
-  padding: .28rem .75rem; border-radius: 6px; background: #f0ecdd; color: #1a0f08;
+  font-weight: 700; font-size: .68rem; letter-spacing: .08em;
+  padding: 3px 8px; border-radius: 4px; background: #f0ecdd; color: #1a0f08;
 }
 .card--top .card__rank { background: var(--d1-gold); }
 .card--top { border-color: rgba(233,179,90,.4); }
@@ -246,7 +242,7 @@
 .m-right::-webkit-scrollbar { width: 4px; }
 .m-right::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
 .m-info { padding: 26px 26px 22px; flex: 1; }
-.m-number { font-family: "Cinzel", serif; font-size: .66rem; letter-spacing: .3em; color: var(--text-dim); margin-bottom: 10px; }
+.m-number { font-size: .66rem; letter-spacing: .25em; color: var(--text-dim); margin-bottom: 10px; }
 .m-title { font-size: 1.05rem; font-weight: 700; line-height: 1.65; color: var(--text); margin-bottom: 8px; }
 .m-title .card__tag { vertical-align: middle; margin: 0 8px 0 0; }
 .m-price { font-size: 1.25rem; font-weight: 700; color: var(--d1-gold); margin-bottom: 14px; letter-spacing: .03em; }
@@ -267,7 +263,7 @@
 .notebox p { font-size: .88rem; line-height: 2; color: var(--text-dim); margin-bottom: 4px; }
 .notebox .highlight { background: rgba(233,179,90,.08); border: 1px solid rgba(233,179,90,.35); border-radius: 10px; padding: 16px 22px; margin-top: 16px; }
 .notebox .highlight p { color: var(--d1-gold); font-weight: 700; text-align: center; font-size: .9rem; }
-.steps-heading { text-align: center; font-family: "Noto Sans JP"; font-size: 1.15rem; font-weight: 700; letter-spacing: .4em; color: #f0ecdd; margin: 40px 0 24px; }
+.steps-heading { text-align: center; font-size: 1.1rem; font-weight: 700; letter-spacing: .25em; color: #f0ecdd; margin: 40px 0 24px; }
 .steps-heading .sparkle { color: var(--d1-gold); }
 .steps-list { max-width: 700px; margin: 0 auto 20px; display: flex; flex-direction: column; gap: 12px; }
 .step-item {
@@ -277,8 +273,8 @@
 }
 a.step-item { cursor: pointer; }
 a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
-.step-num { font-family: "Cinzel", serif; font-size: .7rem; letter-spacing: .1em; color: var(--text-dim); white-space: nowrap; }
-.step-num span { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.9rem; font-weight: 500; color: var(--d1-gold); margin-left: .15em; }
+.step-num { font-size: .68rem; letter-spacing: .08em; color: var(--text-dim); white-space: nowrap; }
+.step-num span { font-size: 1.35rem; font-weight: 700; color: var(--d1-gold); margin-left: .25em; }
 .step-day {
   max-width: 700px; margin: 0 auto; background: var(--bg-2); border: 1px solid rgba(111,198,255,.4); border-radius: 12px;
   text-align: center; padding: 20px 24px; font-size: .92rem; line-height: 1.9;
@@ -310,16 +306,15 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
   .notice-heading { font-size: .9rem; padding: 14px 18px; }
   .notebox { padding: 20px 18px; }
   .notebox p { font-size: .82rem; }
-  .steps-heading { font-size: 1rem; letter-spacing: .3em; }
+  .steps-heading { font-size: 1rem; letter-spacing: .2em; }
   .step-item { padding: 11px 16px; font-size: .82rem; gap: 10px; }
-  .step-num span { font-size: 1.4rem; }
+  .step-num span { font-size: 1.1rem; }
   .step-day { font-size: .85rem; padding: 16px 16px; }
   .bullet-notes { font-size: .8rem; line-height: 2; }
   .bonus { padding: 20px 18px; }
 }
 @media (max-width: 540px) {
-  .info__bar { letter-spacing: .15em; font-size: .92rem; padding: 12px 14px; }
-  .info__bar .sp { display: none; }
+  .info__bar { letter-spacing: .1em; font-size: .9rem; padding: 12px 14px; }
   .preorder__date .arrow { display: none; }
   .preorder__from, .preorder__to { display: block; white-space: nowrap; }
   .preorder__to::before { content: "↓"; display: block; font-family: "Noto Sans JP"; font-size: .55em; line-height: 1.2; color: var(--d1-gold); }
@@ -327,7 +322,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
   .lineup-head--kuji { padding-top: 16px; }
   .lineup-head--kuji::before { margin-bottom: 44px; }
   .gallery--kuji { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .kuji-price strong { font-size: 2rem; }
+  .kuji-price strong { font-size: 1.6rem; }
   .card__rank { top: 8px; left: 8px; font-size: .62rem; padding: .2rem .55rem; }
   .gallery { gap: 12px; padding: 12px 12px 48px; }
   .card__body { padding: 10px 10px 14px; min-height: 76px; }
@@ -410,10 +405,10 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
   -->
   <section class="info" id="preorder">
     <div class="info__inner">
-      <div class="info__bar"><span class="sp">✦</span>グッズ事前注文 会場受取受付<span class="sp">✦</span></div>
+      <div class="info__bar">グッズ事前注文 会場受取受付</div>
 
       <div class="preorder">
-        <div class="app-icon">Cielkocka</div>
+        <div class="app-icon">cielkocka</div>
         <div class="preorder__body">
           <p class="preorder__date"><span class="preorder__from">9.18<span class="day">金</span>18:00</span><span class="arrow">→</span><span class="preorder__to">10.29<span class="day">木</span>23:59</span></p>
           <p class="preorder__sub">cielkocka アプリにて受付</p>
@@ -448,7 +443,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
       </div>
 
       <a class="appbtn" href="https://cielkocka.goods-order.com/" target="_blank" rel="noopener noreferrer">
-        <div class="app-icon">Cielkocka</div>
+        <div class="app-icon">cielkocka</div>
         <div class="appbtn__text">「cielkocka アプリ」の<br>ダウンロードはこちら</div>
       </a>
     </div>
