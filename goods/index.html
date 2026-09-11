@@ -68,7 +68,7 @@
 .info__inner { max-width: 800px; margin: 0 auto; width: 90%; }
 .info__bar {
   text-align: center; padding: 14px 20px; border-radius: 6px;
-  background: linear-gradient(100deg, var(--c-warm) 0%, var(--c-cool) 100%); color: #f7f2ee;
+  background: var(--c-warm); color: #f7f2ee;
   font-weight: 700; letter-spacing: .14em; font-size: clamp(.9rem, 2.2vw, 1.05rem);
 }
 
@@ -627,7 +627,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
      NN は 01〜10＝下の goods（通常商品）、11〜20＝下の kuji（星くじ）の並び順。
      拡張子は .webp に変える。正方形（1:1）・1200px・WebP品質95 で書き出すこと
    ・desc は \n で改行。【サイズ】【素材】などは決まり次第追記
-   ・tag:"DAY1" / "DAY2" / "事後販売" を付けるとカード左上にタグ表示
+   ・tag:"DAY1" / "DAY2" を付けるとカード左上にタグ表示
 ================================================================ */
 const goods = [
 { name:"星灯りランタン ペンライト", price:"¥6,000",
@@ -653,12 +653,6 @@ const goods = [
     images:[] },
 { name:"そらるの星詠みタロット（22枚セット）", price:"¥6,000",
     desc:"大アルカナ22枚のテーマに沿ったそらるイラストのタロットカードセット。\nカードには箔押し加工を施し、専用のボックスに収めました。\n飾るのはもちろん、実際にタロットとして占いを楽しむこともできます。\n\n【内容】カード22枚、専用ボックス\n【サイズ】約 W80×H145mm\n【Illustration】アルコポルカ、ハナ、mamep\n【素材】紙",
-    images:[] },
-{ tag:"事後販売", name:"SD アクキー", price:"",
-    desc:"SDイラストのアクリルキーホルダー。\n※公演後の事後販売となります。\n\n【サイズ】後日追記\n【素材】アクリル",
-    images:[] },
-{ tag:"事後販売", name:"パンフレット", price:"¥2,200",
-    desc:"ライブパンフレット。\n※公演後の事後販売となります。\n\n【サイズ】後日追記\n【素材】紙",
     images:[] }
 ];
 
