@@ -234,9 +234,10 @@
 }
 .m-close:hover { background: var(--bg); transform: scale(1.1); }
 .m-close svg { width: 16px; height: 16px; stroke: #f0ecdd; stroke-width: 2.5; }
-.m-left { flex: 0 0 50%; display: flex; flex-direction: column; background: var(--bg-2); position: relative; min-height: 0; }
-.m-imgwrap { flex: 1; overflow: hidden; position: relative; background: var(--bg-2); display: flex; align-items: center; justify-content: center; }
-.m-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.m-left { flex: 0 0 50%; display: flex; flex-direction: column; justify-content: center; background: var(--bg-2); position: relative; min-height: 0; }
+/* 画像エリアは常に 1:1。縦が足りない画面では vh 側で頭打ちにして正方形を保つ */
+.m-imgwrap { flex: 0 0 auto; width: min(100%, 56vh); margin-inline: auto; aspect-ratio: 1 / 1; overflow: hidden; position: relative; background: var(--bg-2); display: flex; align-items: center; justify-content: center; }
+.m-img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .m-imgwrap .card__img--none { position: absolute; inset: 0; }
 .m-imgwrap .card__img--none span { font-size: 3rem; }
 .m-thumbs { display: flex; gap: 6px; padding: 10px 12px; overflow-x: auto; background: rgba(7,6,13,.5); flex-shrink: 0; }
@@ -343,8 +344,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
   /* SP modal: vertical */
   .modal { flex-direction: column; width: calc(100% - 24px); max-width: 360px; max-height: 94vh; }
   .m-left { flex: 0 0 auto; width: 100%; }
-  .m-imgwrap { aspect-ratio: 1 / 1; height: auto; width: 100%; }
-  .m-img { object-fit: contain; }
+  .m-imgwrap { width: min(100%, 46vh); }
   .m-thumbs { padding: 6px 10px; gap: 5px; }
   .thumb { width: 40px; height: 40px; border-radius: 5px; }
   .m-right { flex: 1; overflow-y: auto; }
