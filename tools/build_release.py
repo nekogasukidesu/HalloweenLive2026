@@ -22,7 +22,7 @@ BASE_PATH = '/HalloweenLive2026/'   # サーバー上の設置パス
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DIST = ROOT / 'dist' / 'server_htaccess'
-EXCLUDE_NAMES = {'.DS_Store', '.gitignore', '.gitkeep', 'README.md'}
+EXCLUDE_NAMES = {'.DS_Store', '.gitignore', '.gitkeep', 'README.md', 'CLAUDE.md'}
 
 def source_files():
     out = []
