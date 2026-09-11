@@ -99,7 +99,11 @@ def main():
     gp.write_text(g, encoding='utf-8')
 
     t, gd = SCHEDULE['ticket'], SCHEDULE['goods']
-    def before(ts): return str(int(ts) - 1)
+    def before(ts):
+        # 1秒前の YYYYMMDDHHMMSS（>= 比較の代わりに > で使う）
+        import datetime
+        d = datetime.datetime.strptime(ts, '%Y%m%d%H%M%S') - datetime.timedelta(seconds=1)
+        return d.strftime('%Y%m%d%H%M%S')
     (DIST / '.htaccess').write_text(f'''# ============================================
 # 段階公開（サーバー時刻＝日本時間で判定）
 #   〜 チケット券売開始   index.html      … 公開前（TICKET は COMING SOON）
