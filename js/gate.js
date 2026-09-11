@@ -1,6 +1,6 @@
 /* ============================================
    公開前ゲート（パスワード + 公開タイマー）
-   - RELEASE_AT を過ぎると自動で全公開
+   - RELEASE_AT を過ぎると自動で全公開（ページ単位の上書きは下記参照）
    - それまでは COMING SOON 画面（パスワードでプレビュー可）
    - パスワード変更: 新パスワードの SHA-256 を PASS_HASH に設定
      （ターミナル: printf '新パスワード' | shasum -a 256）
@@ -8,7 +8,9 @@
      ホスティング側の Basic認証等を併用してください。
 ============================================ */
 (function () {
-  var RELEASE_AT = Date.parse('2026-07-22T19:00:00+09:00');
+  // ページ側で <script>window.GATE_RELEASE_AT='2026-09-14T12:00:00+09:00'</script> を
+  // このスクリプトより前に書くと、そのページだけ解禁日時を上書きできる
+  var RELEASE_AT = Date.parse(window.GATE_RELEASE_AT || '2026-07-22T19:00:00+09:00');
   var PASS_HASH = 'f283ec70734eab088ad35a7066e5d40a6d236c0f7f13fb66f28548c2c88ac1e6'; // soraru2026
 
   if (Date.now() >= RELEASE_AT) return;

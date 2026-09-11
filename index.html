@@ -36,7 +36,7 @@
     <nav class="nav" id="nav">
       <ul class="nav__list">
         <li><a href="#news" class="nav__link">NEWS</a></li>
-        <li class="nav__item--hidden"><a href="goods/" class="nav__link">GOODS</a></li>
+        <li data-show="goods" style="display:none"><a href="goods/" class="nav__link">GOODS</a></li>
         <li><a href="#schedule" class="nav__link">SCHEDULE</a></li>
         <li><a href="#ticket" class="nav__link">TICKET</a></li>
         <li><a href="survey/" class="nav__link">REQUEST</a></li>
@@ -86,10 +86,15 @@
   <div class="container">
     <h2 class="section__title"><span class="en">NEWS</span><span class="jp">お知らせ</span></h2>
     <ul class="news__list">
-      <li class="news__item">
-        <time class="news__date">2026.09.18</time>
+      <li class="news__item" data-show="goods" style="display:none">
+        <time class="news__date">2026.09.14</time>
         <span class="news__tag">GOODS</span>
         <p class="news__text"><a href="goods/" style="text-decoration:underline;">オフィシャルグッズ情報を公開しました。グッズ事前注文（会場受取）の受付は 9/18(金) 18:00 から→</a></p>
+      </li>
+      <li class="news__item" data-show="ticket" style="display:none">
+        <time class="news__date">2026.09.12</time>
+        <span class="news__tag">TICKET</span>
+        <p class="news__text"><a href="https://eplus.jp/soraru_halloween2026/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">イープラス先着先行の受付を開始しました。受付は 9/22(火・休) 23:59 まで→</a></p>
       </li>
       <li class="news__item" data-fm-show style="display:none">
         <time class="news__date">2026.08.25</time>
@@ -128,7 +133,7 @@
 </section>
 
 <!-- ===== Goods ===== -->
-<section class="section goods" id="goods">
+<section class="section goods" id="goods" data-show="goods" style="display:none">
   <div class="container">
     <h2 class="section__title"><span class="en">GOODS</span><span class="jp">グッズ</span></h2>
     <a href="goods/" class="goods__soon goods__link">
@@ -177,46 +182,57 @@
 <section class="section ticket" id="ticket">
   <div class="container">
     <h2 class="section__title"><span class="en">TICKET</span><span class="jp">チケット</span></h2>
-    <div class="goods__soon">
+
+    <!-- 券売開始前（9/12 18:00 に自動で非表示） -->
+    <div class="goods__soon" data-hide="ticket">
       <p class="goods__soon-en">COMING SOON</p>
     </div>
-    <!-- 券売情報（公開時にコメントを外す）
 
-    <div class="ticket__price">
-      <span class="ticket__price-label">全席指定</span>
-      <span class="ticket__price-value">9,000<small>円(税込)</small></span>
-      <span class="ticket__price-note">レプリカチケット付き</span>
-      <span class="ticket__price-note">※１公演につき、おひとりさま４枚まで</span>
-    </div>
-
-    <div class="ticket__schedule">
-      <h3 class="ticket__sub">券売スケジュール</h3>
-
-      <div class="ticket__phase" data-fm-hide>
-        <h4 class="ticket__phase-title">最速先行受付</h4>
-        <dl class="ticket__dl">
-          <dt>受付期間</dt>
-          <dd>2026/7/22(水) 20:00 〜 8/3(月) 23:59</dd>
-          <dt>当選発表・入金期限</dt>
-          <dd>2026/8/8(土) 15:00 〜 8/14(金) 21:00</dd>
-        </dl>
+    <!-- 券売情報（9/12 18:00 に自動で表示） -->
+    <div data-show="ticket" style="display:none">
+      <div class="ticket__price">
+        <span class="ticket__price-label">全席指定</span>
+        <span class="ticket__price-value">9,000<small>円(税込)</small></span>
+        <span class="ticket__price-note">レプリカチケット付き</span>
+        <span class="ticket__price-note">※１公演につき、おひとりさま４枚まで</span>
       </div>
 
-      <div class="ticket__phase" data-fm-show style="display:none">
-        <h4 class="ticket__phase-title">FamilyMart先行受付</h4>
-        <dl class="ticket__dl">
-          <dt>受付期間</dt>
-          <dd>2026/8/25(火) 18:00 〜 8/31(月) 23:59</dd>
-          <dt>当落・入金期間</dt>
-          <dd>2026/9/5(土) 15:00 〜 9/9(水) 21:00</dd>
-        </dl>
+      <div class="ticket__schedule">
+        <h3 class="ticket__sub">券売スケジュール</h3>
+
+        <div class="ticket__phase">
+          <h4 class="ticket__phase-title">イープラス先着先行</h4>
+          <dl class="ticket__dl">
+            <dt>受付期間</dt>
+            <dd>2026/9/12(土) 18:00 〜 9/22(火・休) 23:59</dd>
+          </dl>
+          <p class="ticket__phase-extra">※先着順のため、予定枚数に達し次第受付終了となります。</p>
+        </div>
+
+        <!-- 終了した受付（記録用）
+        <div class="ticket__phase">
+          <h4 class="ticket__phase-title">最速先行受付</h4>
+          <dl class="ticket__dl">
+            <dt>受付期間</dt>
+            <dd>2026/7/22(水) 20:00 〜 8/3(月) 23:59</dd>
+            <dt>当選発表・入金期限</dt>
+            <dd>2026/8/8(土) 15:00 〜 8/14(金) 21:00</dd>
+          </dl>
+        </div>
+        <div class="ticket__phase">
+          <h4 class="ticket__phase-title">FamilyMart先行受付</h4>
+          <dl class="ticket__dl">
+            <dt>受付期間</dt>
+            <dd>2026/8/25(火) 18:00 〜 8/31(月) 23:59</dd>
+            <dt>当落・入金期間</dt>
+            <dd>2026/9/5(土) 15:00 〜 9/9(水) 21:00</dd>
+          </dl>
+        </div>
+        -->
       </div>
 
+      <a href="https://eplus.jp/soraru_halloween2026/" target="_blank" rel="noopener noreferrer" class="ticket__btn">チケットのお申込みはこちら（e+）</a>
     </div>
-
-    <a href="https://eplus.jp/soraru_halloween2026/saisoku/" target="_blank" rel="noopener noreferrer" class="ticket__btn" data-fm-hide>最速先行受付はこちら（e+）</a>
-    <a href="https://eplus.jp/soraru_halloween2026/fm/" target="_blank" rel="noopener noreferrer" class="ticket__btn" data-fm-show style="display:none">FamilyMart先行受付はこちら（e+）</a>
-    -->
   </div>
 </section>
 
