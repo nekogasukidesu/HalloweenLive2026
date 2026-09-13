@@ -118,6 +118,7 @@
 .bonus__label { display: inline-block; padding: .2rem .7rem; border-radius: 4px; border: 1px solid var(--d1-gold); color: var(--d1-gold); background: rgba(var(--gold-rgb),.1); font-weight: 700; font-size: .74rem; letter-spacing: .08em; margin-bottom: .8rem; }
 .bonus__head { font-weight: 700; font-size: clamp(.98rem, 2.3vw, 1.12rem); line-height: 1.8; }
 .bonus__head .yen { font-weight: 700; font-size: 1.3em; color: #f0ecdd; margin: 0 .08em; }
+.bonus__head .nw { white-space: nowrap; }  /* 句の途中で折り返さない（SPで「星く／じの」のような孤立を防ぐ） */
 .bonus__head mark { background: rgba(var(--gold-rgb),.22); color: var(--d1-gold); padding: .05em .3em; font-weight: 700; }
 .bonus__inner { flex: 1; }
 .bonus__head--sub { margin-top: .9rem; padding-top: .9rem; border-top: 1px dashed rgba(var(--gold-rgb),.3); }
@@ -463,8 +464,10 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
         <div class="bonus__inner">
           <span class="bonus__label">グッズ事前注文 購入特典</span>
           <p class="bonus__head">ご購入金額税込 <span class="yen">¥5,000</span> 毎に<br><mark>クリアトレカ</mark> を1枚プレゼント！</p>
-          <p class="bonus__head bonus__head--sub">ご購入金額税込 <span class="yen">¥10,000</span> 以上で<br><mark>ハイタッチ会参加券</mark> を1枚プレゼント！</p>
-          <p class="bonus__note">※お会計が税込10,000円の場合、クリアトレカは2枚お渡しとなります。<br>※複数会計 合算不可となります。<br>※クリアトレカのデザインは後日公開いたします。<br>※ハイタッチ会の詳細は後日発表いたします。</p>
+          <p class="bonus__note">※絵柄は後日公開いたします。<br>※お会計が税込10,000円の場合、2枚お渡しとなります。<br>※複数会計 合算不可となります。<br>※受取日時によってデザインは異なります。</p>
+
+          <p class="bonus__head bonus__head--sub"><span class="nw">グッズ事前注文会場受取／</span><span class="nw">当日販売／</span><span class="nw">星くじの</span><span class="nw">合計ご購入金額</span><span class="nw">税込 <span class="yen">¥10,000</span> 以上で</span><br><span class="nw">終演後に開催される</span> <mark>ハイタッチ会参加券</mark> <span class="nw">を1枚プレゼント！</span></p>
+          <p class="bonus__note">※税込20,000円以上ご購入いただいた場合も、「ハイタッチ会参加券」は1公演につき1枚のみのお渡しとなります。<br>※ハイタッチ会は公演当日のチケットをお持ちのお客様限定のイベントです。<br>※1公演につき1回、配布した日程の公演のみご参加いただけます。</p>
         </div>
       </div>
 
