@@ -118,7 +118,7 @@
 .bonus__label { display: inline-block; padding: .2rem .7rem; border-radius: 4px; border: 1px solid var(--d1-gold); color: var(--d1-gold); background: rgba(var(--gold-rgb),.1); font-weight: 700; font-size: .74rem; letter-spacing: .08em; margin-bottom: .8rem; }
 .bonus__head { font-weight: 700; font-size: clamp(.98rem, 2.3vw, 1.12rem); line-height: 1.8; }
 .bonus__head .yen { font-weight: 700; font-size: 1.3em; color: #f0ecdd; margin: 0 .08em; }
-.bonus__head .nw { white-space: nowrap; }  /* 句の途中で折り返さない（SPで「星く／じの」のような孤立を防ぐ） */
+.bonus__head .nw, .kuji-lead .nw { white-space: nowrap; }  /* 句の途中で折り返さない（SPで「星く／じの」のような孤立を防ぐ） */
 .bonus__head mark { background: rgba(var(--gold-rgb),.22); color: var(--d1-gold); padding: .05em .3em; font-weight: 700; }
 .bonus__inner { flex: 1; }
 .bonus__head--sub { margin-top: .9rem; padding-top: .9rem; border-top: 1px dashed rgba(var(--gold-rgb),.3); }
@@ -493,7 +493,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
     <h2 class="lineup-head__main lineup-head__main--jp">星くじ</h2>
     <div class="lineup-head__deco"><div class="line"></div><div class="dot"></div><div class="line"></div></div>
     <p class="kuji-price">1回 <strong>¥800</strong><small>(税込)</small></p>
-    <p class="kuji-lead">特賞・A賞〜F賞のいずれかが必ず当たります。<br>景品の種類はお選びいただけません。</p>
+    <p class="kuji-lead">特賞・A賞〜F賞のいずれかが必ず当たる、<span class="nw">ハズレなしのくじ！</span><br>賞の種類・絵柄はお選びいただけません。</p>
     <div class="lineup-head__count" id="kuji-count"></div>
   </div>
   <div class="gallery gallery--kuji" id="kuji-gallery"></div>
