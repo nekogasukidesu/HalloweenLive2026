@@ -18,6 +18,12 @@ SCHEDULE = {
     'ticket': '20260912180000',   # チケット券売開始（YYYYMMDDHHMMSS, 日本時間）
     'goods':  '20260914180000',   # グッズ情報解禁
 }
+
+# グッズページの内容を途中で差し替えるとき（事前注文開始など）に使う。
+# 指定するとその時刻まで GOODS_PREV_REF の版を出し、時刻を過ぎると現在の版に切り替わる。
+# 不要になったら GOODS_UPDATE_AT = None に戻す（現在の版だけになる）。
+GOODS_UPDATE_AT = '20260918180000'   # 9/18(金) 18:00 事前注文受付開始に合わせて切替
+GOODS_PREV_REF  = '81ed358'          # 切替前に出す版のコミット（現在サーバーに上がっている版）
 BASE_PATH = '/HalloweenLive2026/'   # サーバー上の設置パス
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -124,11 +130,27 @@ RewriteRule ^index_0912\\.html$ - [R=404,L]
 RewriteCond %{{TIME}} <{gd}
 RewriteRule ^index_0914\\.html$ - [R=404,L]
 ''', encoding='utf-8')
+    goods_rules = ''
+    if GOODS_UPDATE_AT:
+        # 切替前の版を index_prev.html として置き、解禁〜切替時刻の間はそちらを返す
+        prev = subprocess.run(['git', 'show', f'{GOODS_PREV_REF}:goods/index.html'],
+                              cwd=ROOT, capture_output=True, text=True, check=True).stdout
+        prev = re.sub(r'<!-- グッズ情報解禁までは COMING SOON ゲート[^\n]*\n<script>window\.GATE_RELEASE_AT = \'[^\']+\';</script>\n<script src="\.\./js/gate\.js"></script>',
+                      '<!-- 解禁前の非公開は goods/.htaccess で制御 -->', prev)
+        (DIST / 'goods' / 'index_prev.html').write_text(prev, encoding='utf-8')
+        goods_rules = f'''
+# 切替時刻までは旧版（index_prev.html）を返す
+RewriteCond %{{TIME}} <{GOODS_UPDATE_AT}
+RewriteRule ^(index\\.html)?$ index_prev.html [L]
+# 切替後は旧版への直接アクセスを 404 に
+RewriteCond %{{TIME}} >{GOODS_UPDATE_AT}
+RewriteRule ^index_prev\\.html$ - [R=404,L]
+'''
     (DIST / 'goods' / '.htaccess').write_text(f'''# グッズ情報解禁までフォルダ全体を 404 にする（日時はルートの .htaccess と揃える）
 RewriteEngine On
 RewriteCond %{{TIME}} <{gd}
 RewriteRule ^ - [R=404,L]
-''', encoding='utf-8')
+{goods_rules}''', encoding='utf-8')
 
     zpath = DIST.parent / 'server_htaccess.zip'
     zpath.unlink(missing_ok=True)
