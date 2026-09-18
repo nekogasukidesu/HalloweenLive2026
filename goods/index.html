@@ -123,6 +123,7 @@
 .bonus__inner { flex: 1; }
 .bonus__head--sub { margin-top: .9rem; padding-top: .9rem; border-top: 1px dashed rgba(var(--gold-rgb),.3); }
 .bonus__note { margin-top: .9rem; font-size: .76rem; color: var(--text-dim); line-height: 1.8; }
+.bonus__note--common { margin-top: 1rem; padding-top: .9rem; border-top: 1px dashed rgba(var(--gold-rgb),.3); }  /* 特典共通の注意事項 */
 
 .appbtn {
   display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap;
@@ -426,7 +427,7 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
   <!--
     ▼ 受付期間が決まったら .preorder__date を以下の形式に差し替え（is-soon を外す）:
       <p class="preorder__date"><span class="preorder__from">10.10<span class="day">土</span>18:00</span><span class="arrow">→</span><span class="preorder__to">10.25<span class="day">日</span>23:59</span></p>
-    ▼ 受取時間・当日販売時間が決まったら .sched__tbd を .sched__time に差し替え:
+    ▼ 受取時間・当日販売時間（決定済み）。未定に戻す場合は .sched__time を <span class="sched__tbd">後日発表</span> に:
       <span class="sched__time">13:00〜17:00</span>
       <span class="sched__time">13:00〜<small>終演後30分程度まで</small></span>
   -->
@@ -446,15 +447,15 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
         <div class="sched__col">
           <div class="sched__head">グッズ事前注文<br>会場受取 引換時間</div>
           <div class="sched__body">
-            <div class="sched__row"><span class="sched__date">10.31</span><span class="sched__day sched__day--sat">土</span><span class="sched__tbd">後日発表</span></div>
-            <div class="sched__row"><span class="sched__date">11.01</span><span class="sched__day sched__day--sun">日</span><span class="sched__tbd">後日発表</span></div>
+            <div class="sched__row"><span class="sched__date">10.31</span><span class="sched__day sched__day--sat">土</span><span class="sched__time">10:00〜14:00</span></div>
+            <div class="sched__row"><span class="sched__date">11.01</span><span class="sched__day sched__day--sun">日</span><span class="sched__time">10:00〜14:00</span></div>
           </div>
         </div>
         <div class="sched__col sched__col--venue">
           <div class="sched__head">グッズ当日販売<br>受付時間</div>
           <div class="sched__body">
-            <div class="sched__row"><span class="sched__date">10.31</span><span class="sched__day sched__day--sat">土</span><span class="sched__tbd">後日発表</span></div>
-            <div class="sched__row"><span class="sched__date">11.01</span><span class="sched__day sched__day--sun">日</span><span class="sched__tbd">後日発表</span></div>
+            <div class="sched__row"><span class="sched__date">10.31</span><span class="sched__day sched__day--sat">土</span><span class="sched__time">10:00〜<small>終演後30分程度まで</small></span></div>
+            <div class="sched__row"><span class="sched__date">11.01</span><span class="sched__day sched__day--sun">日</span><span class="sched__time">10:00〜<small>終演後30分程度まで</small></span></div>
           </div>
         </div>
       </div>
@@ -468,6 +469,8 @@ a.step-item:hover { border-color: var(--d1-gold); transform: translateX(4px); }
 
           <p class="bonus__head bonus__head--sub"><span class="nw">グッズ事前注文会場受取・</span><span class="nw">当日販売の</span><br><span class="nw">合計税込<span class="yen">¥10,000</span>以上の</span><span class="nw">ご購入で</span><br><span class="nw">終演後に開催される</span><mark>「ハイタッチ会」の参加券</mark><span class="nw">をプレゼント！</span></p>
           <p class="bonus__note">※税込20,000円以上ご購入いただいた場合も、「ハイタッチ会参加券」は1公演につき1枚のみのお渡しとなります。<br>※ハイタッチ会は公演当日のチケットをお持ちのお客様限定のイベントです。<br>※1公演につき1回、配布した日程の公演のみご参加いただけます。</p>
+
+          <p class="bonus__note bonus__note--common">※星くじも特典対象に含まれます。<br>※日付をまたぐ合算はできかねます。</p>
         </div>
       </div>
 
