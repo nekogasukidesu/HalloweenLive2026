@@ -22,8 +22,8 @@ SCHEDULE = {
 # グッズページの内容を途中で差し替えるとき（事前注文開始など）に使う。
 # 指定するとその時刻まで GOODS_PREV_REF の版を出し、時刻を過ぎると現在の版に切り替わる。
 # 不要になったら GOODS_UPDATE_AT = None に戻す（現在の版だけになる）。
-GOODS_UPDATE_AT = '20260918180000'   # 9/18(金) 18:00 事前注文受付開始に合わせて切替
-GOODS_PREV_REF  = '81ed358'          # 切替前に出す版のコミット（現在サーバーに上がっている版）
+GOODS_UPDATE_AT = None               # 時刻切替なし（現在の版をそのまま出す）
+GOODS_PREV_REF  = '81ed358'          # 切替を使うときに、切替前へ出す版のコミット
 BASE_PATH = '/HalloweenLive2026/'   # サーバー上の設置パス
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
