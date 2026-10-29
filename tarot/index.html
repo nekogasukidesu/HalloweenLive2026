@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>そらるの星詠みタロット</title>
+<meta name="description" content="そらるの星詠みタロット。カードを一枚めくって、今日のメッセージを受け取ろう。">
+<meta property="og:title" content="そらるの星詠みタロット">
+<meta property="og:description" content="カードを一枚めくって、今日のメッセージを受け取ろう。">
+<meta property="og:type" content="website">
+<!-- 公開先のURL。別の場所に置くときはここを書き換える -->
+<meta property="og:url" content="https://soraruru.jp/HalloweenLive2026/tarot/">
+<meta property="og:image" content="https://soraruru.jp/HalloweenLive2026/tarot/img/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soraruru.jp/HalloweenLive2026/tarot/img/ogp.jpg">
+<link rel="canonical" href="https://soraruru.jp/HalloweenLive2026/tarot/">
+<meta name="theme-color" content="#1f2229">
+<style>html { background: #1f2229; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- css / js を更新したら ?v= の数字を上げる（古いキャッシュが残らないように） -->
+<link rel="stylesheet" href="css/style.css?v=42">
+</head>
+<body>
+<div class="bg-cards" id="bg-cards" aria-hidden="true"></div>
+<div class="bg-noise" aria-hidden="true"></div>
+
+<div class="frame" aria-hidden="true">
+  <span class="corner tl"></span><span class="corner tr"></span>
+  <span class="corner bl"></span><span class="corner br"></span>
+</div>
+
+<main class="app">
+
+  <!-- ===== HOME ===== -->
+  <section id="screen-home" class="screen is-active">
+    <header class="hero">
+      <p class="hero-eyebrow">✦ SORARU TAROT ✦</p>
+      <h1 class="hero-title">そらるの<br class="sp-only">星詠みタロット</h1>
+      <div class="divider"><span></span><i>✦</i><span></span></div>
+    </header>
+
+    <nav class="menu" aria-label="占いメニュー">
+      <button class="menu-btn" data-mode="one">
+        <i class="star tl" aria-hidden="true">✦</i><i class="star tr" aria-hidden="true">✦</i>
+        <i class="star bl" aria-hidden="true">✦</i><i class="star br" aria-hidden="true">✦</i>
+        <span class="menu-en">ONE CARD</span>
+        <span class="menu-ja">今日の一枚</span>
+        <span class="menu-desc">今日のあなたへ、一枚のメッセージ</span>
+      </button>
+    </nav>
+
+  </section>
+
+  <!-- ===== READING ===== -->
+  <section id="screen-reading" class="screen">
+    <header class="reading-head">
+      <button class="back-btn" id="btn-back" aria-label="メニューに戻る">‹ MENU</button>
+      <p class="reading-mode"><span class="reading-mode-en" id="reading-mode-en"></span><span class="reading-mode-ja" id="reading-mode-ja"></span></p>
+    </header>
+
+    <p class="instruction" id="instruction">心を落ち着けて、気になるカードを一枚選んでね</p>
+
+    <div class="slots" id="slots"></div>
+
+    <div class="spread-wrap" id="spread-wrap">
+      <div class="spread" id="spread"></div>
+      <button class="shuffle-btn" id="btn-shuffle" type="button">
+        <span class="shuffle-en">✦ SHUFFLE ✦</span>
+        <span class="shuffle-ja">カードを混ぜる</span>
+      </button>
+    </div>
+
+    <div class="result" id="result" hidden>
+      <div class="result-yn" id="result-yn" hidden>
+        <span class="yn-en" id="yn-en"></span>
+        <span class="yn-line" aria-hidden="true"><i></i><b>✦</b><i></i></span>
+      </div>
+      <div class="result-cards" id="result-cards"></div>
+
+      <div class="share">
+        <p class="share-label">✦ SHARE ✦</p>
+        <div class="share-btns">
+          <a class="share-btn" id="share-x" title="Xでシェア" href="#" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20z"/></svg>
+            <span>X</span>
+          </a>
+          <a class="share-btn" id="share-line" title="LINEでシェア" href="#" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5C6.2 2.5 1.5 6.3 1.5 11c0 4.2 3.7 7.7 8.7 8.4.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.6 8.2-6.1c1.5-1.7 2.3-3.4 2.3-5.3 0-4.7-4.7-8.5-10.4-8.5zM8 13.6H5.7c-.3 0-.5-.2-.5-.5V8.9c0-.3.2-.5.5-.5s.5.2.5.5v3.7H8c.3 0 .5.2.5.5s-.2.5-.5.5zm1.8-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.9c0-.3.2-.5.5-.5s.5.2.5.5v4.2zm5.1 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-2.2-2.9v2.6c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.9c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l2.2 2.9V8.9c0-.3.2-.5.5-.5s.5.2.5.5v4.2zm3.5-2.6c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v1h1.5c.3 0 .5.2.5.5s-.2.5-.5.5h-2c-.3 0-.5-.2-.5-.5V8.9c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v1h1.5z"/></svg>
+            <span>LINE</span>
+          </a>
+          <button class="share-btn" id="share-copy" title="リンクをコピー">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l2.8-2.8a1 1 0 1 1 1.4 1.4L12 13.4a1 1 0 0 1-1.4 0zm-3.5 4.9a3 3 0 0 1 0-4.2l2.1-2.1 1.4 1.4-2.1 2.1a1 1 0 1 0 1.4 1.4l2.1-2.1 1.4 1.4-2.1 2.1a3 3 0 0 1-4.2 0zm9.8-5.6-1.4-1.4 2.1-2.1a1 1 0 1 0-1.4-1.4L14.1 10l-1.4-1.4 2.1-2.1a3 3 0 1 1 4.2 4.2l-2.1 2z"/></svg>
+            <span id="copy-label">リンク</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button class="ghost-btn" id="btn-again">もう一度引く</button>
+        <button class="ghost-btn" id="btn-menu">メニューへ</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/cards.js?v=42"></script>
+<script src="js/app.js?v=42"></script>
+
+</body></html>

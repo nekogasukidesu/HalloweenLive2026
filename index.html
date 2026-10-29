@@ -36,7 +36,7 @@
     <nav class="nav" id="nav">
       <ul class="nav__list">
         <li><a href="#news" class="nav__link">NEWS</a></li>
-        <li data-show="goods" style="display:none"><a href="goods/" class="nav__link">GOODS</a></li>
+        <li><a href="goods/" class="nav__link">GOODS</a></li>
         <li><a href="#schedule" class="nav__link">SCHEDULE</a></li>
         <li><a href="#ticket" class="nav__link">TICKET</a></li>
         <li><a href="survey/" class="nav__link">REQUEST</a></li>
@@ -86,17 +86,17 @@
   <div class="container">
     <h2 class="section__title"><span class="en">NEWS</span><span class="jp">お知らせ</span></h2>
     <ul class="news__list">
-      <li class="news__item" data-show="goods" style="display:none">
+      <li class="news__item">
         <time class="news__date">2026.09.14</time>
         <span class="news__tag">GOODS</span>
         <p class="news__text"><a href="goods/" style="text-decoration:underline;">オフィシャルグッズ情報を公開しました。グッズ事前注文（会場受取）の受付は 9/18(金) 18:00 から→</a></p>
       </li>
-      <li class="news__item" data-show="ticket" style="display:none">
+      <li class="news__item">
         <time class="news__date">2026.09.12</time>
         <span class="news__tag">TICKET</span>
         <p class="news__text"><a href="https://eplus.jp/soraru_halloween2026/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">イープラス先着先行の受付を開始しました。レプリカチケットのデザインも公開。受付は 9/22(火・休) 23:59 まで→</a></p>
       </li>
-      <li class="news__item" data-show="ticket" style="display:none">
+      <li class="news__item">
         <time class="news__date">2026.09.12</time>
         <span class="news__tag">INFO</span>
         <p class="news__text">ハロウィンライブのための新曲3曲の制作が決定！</p>
@@ -138,7 +138,7 @@
 </section>
 
 <!-- ===== Goods ===== -->
-<section class="section goods" id="goods" data-show="goods" style="display:none">
+<section class="section goods" id="goods">
   <div class="container">
     <h2 class="section__title"><span class="en">GOODS</span><span class="jp">グッズ</span></h2>
     <a href="goods/" class="goods__soon goods__link">
@@ -188,13 +188,7 @@
   <div class="container">
     <h2 class="section__title"><span class="en">TICKET</span><span class="jp">チケット</span></h2>
 
-    <!-- 券売開始前（9/12 18:00 に自動で非表示） -->
-    <div class="goods__soon" data-hide="ticket">
-      <p class="goods__soon-en">COMING SOON</p>
-    </div>
-
-    <!-- 券売情報（9/12 18:00 に自動で表示） -->
-    <div data-show="ticket" style="display:none">
+    <div>
       <div class="ticket__price">
         <span class="ticket__price-label">全席指定</span>
         <span class="ticket__price-value">9,000<small>円(税込)</small></span>
@@ -266,23 +260,24 @@
       <h3 class="notice__title">チケットのお申込みに関しての注意事項</h3>
       <div class="notice__text">
         <ul class="notice__list">
-          <li>本公演は公演当日の会場規定に基づいた定員での販売を予定しております。</li>
-          <li>本公演のチケットは全てe+スマチケでの発券となります。スマートフォンをお持ちでないと申込むことができません。</li>
+          <li>本公演は、会場規定に基づいた定員でのチケット販売となります。</li>
+          <li>本公演のチケットは全てe+スマチケでの発券となります。ご入場にはスマートフォンが必要です。</li>
           <li>お申込みは1公演につきおひとり様4枚までとなります。</li>
+          <li>3歳以上のお客さまはチケットが必要です。</li>
           <li>本公演のチケットを1公演につき複数枚ご購入の方は、公演当日スマチケをそれぞれのスマートフォンにダウンロードしてご入場いただく必要がございます。</li>
           <li>チケットお申込み者および同行者の方は、イープラスの会員登録とe+アプリのダウンロードが必要です。</li>
-          <li>同行者の方がお越しになれなくなった場合は、他の方への譲渡いただけます。譲渡先の方も、イープラスの会員登録とe+アプリのダウンロードが必要です。お申込み者のチケットの譲渡は禁止させていただきます。</li>
+          <li>同行者の方がお越しになれなくなった場合は、他の方へ譲渡いただけます。譲渡先の方も、イープラスの会員登録とe+アプリのダウンロードが必要です。お申込み者のチケットの譲渡は禁止させていただきます。</li>
         </ul>
         <p class="notice__sub">＜イープラス新規会員登録・アプリのダウンロードはこちら（無料）＞<br>
         <a href="https://member.eplus.jp/register-member" target="_blank" rel="noopener noreferrer" class="notice__link">https://member.eplus.jp/register-member</a></p>
         <ul class="notice__list">
           <li>チケットご購入時にご登録いただいたお客さま情報は、必要に応じて公共機関へ提供させていただく可能性がございます。</li>
-          <li>公演当日、お客さまのご都合によりご入場できない場合、チケットの払戻しは一切いたしませんので、あらかじめご了承ください。</li>
+          <li>公演当日、お客さまのご都合によりご入場いただけない場合、チケットの払戻しは一切いたしませんので、あらかじめご了承ください。</li>
         </ul>
         <p class="notice__sub">＜チケットに関してのお問合わせ＞<br>
-        イープラスカスタマーセンター　<a href="http://eplus.jp/qa/" target="_blank" rel="noopener noreferrer" class="notice__link">http://eplus.jp/qa/</a></p>
+        イープラスカスタマーセンター　<a href="https://eplus.jp/qa/" target="_blank" rel="noopener noreferrer" class="notice__link">https://eplus.jp/qa/</a></p>
         <ul class="notice__list">
-          <li>本公演では、金額に関わらず転売チケットでのご入場を固くお断りいたします。チケットを出品された方・購入された方に対し厳重な調査を行った上で、転売チケットに該当する座席番号は無効とし、ご入場することが出来ません。</li>
+          <li>本公演では、金額に関わらず転売チケットでのご入場を固くお断りいたします。チケットを出品された方・購入された方に対し厳重な調査を行った上で、転売チケットに該当する座席番号は無効とし、ご入場いただけません。</li>
         </ul>
       </div>
     </div>
@@ -297,33 +292,47 @@
           <li>ご入場に時間がかかりますため、余裕をもってご来場ください。開演直前にご来場されますと、開演してからのご入場となる場合がございます。</li>
           <li>開演時間に間に合わない場合でもご入場いただけますが、再入場は基本的にお断りしております。係員の指示に従ってください。</li>
           <li>会場内に大きい荷物を預けられるロッカーやクロークはございません。近隣施設のコインロッカー等にお預けください。</li>
-          <li>18歳未満の未成年のお客さまは、必ず保護者の方の同意を得た上でご来場ください。</li>
+          <li>ライブ会場内に更衣室はございませんのでご注意ください。</li>
+          <li>18歳未満のお客さまは、必ず保護者の方の同意を得た上でご来場ください。</li>
           <li>チケットは必ず同行者へ分配した状態でご入場ください。分配できない場合は身分証による購入者情報の確認をさせていただき、確認ができない場合はご入場をお断りさせていただく場合がございます。あらかじめご了承ください。</li>
+          <li>体調を整えた上でご来場ください。当日はこまめな水分補給をお願いいたします。</li>
         </ul>
 
         <h4 class="notice__heading">＜公演中につきまして＞</h4>
         <ul class="notice__list notice__list--circle">
-          <li>サンダルや、ヒール・厚底・インソールの靴は怪我の原因および周りのお客さまのご迷惑となりますのでご遠慮ください。</li>
+          <li>ご自身や周りのお客さまのお怪我、後方のお客さまのご鑑賞の妨げとならないよう、ヒールの高い靴・厚底の靴・サンダルでのご来場はお避けください。</li>
           <li>場内での撮影・録音行為は一切禁止です。いかなる機器においても、そのような行為は発見次第データ消去の上ご退場いただきますので、絶対におやめください。<br>※公演中に限らず、開場中・終演後も禁止となりますので、あらかじめご了承ください。</li>
           <li>公演の妨げおよび盗撮・盗聴行為防止のため、公演中は携帯電話・スマートフォンの電源をOFFにするか、サイレントマナーモードに設定ください。不審な行為は発見次第確認させていただく場合もございます。万が一公演中に携帯電話の使用が必要となった場合は、ロビーまで出てからの使用をお願いいたします。</li>
           <li>公演中のうちわ・メッセージボードの使用は禁止です。発見した場合は注意・もしくは没収させていただく場合がございます。係員の指示に従ってください。</li>
           <li>ペンライトの使用につきまして、周りのお客さまのご迷惑となるようなサイズ・光量のものを発見した場合、注意させていただく場合がございます。また、原則胸の高さでのご使用をお願いいたします。</li>
           <li>座席交換は禁止です。必ず券面に記載されているご自身の座席でご鑑賞ください。</li>
+          <li>ペンライト・リングライトなど、光るアイテムはご使用いただけますが、周りのお客さまのご鑑賞の妨げとなるような極端に強い光を放つものは、公演中はお控えください。スタッフの判断により、ご使用をお控えいただくようお願いする場合がございます。</li>
+          <li>未就学児のお子さまが大きな声を出された場合など、一時的にご退席をお願いする場合がございます。</li>
+        </ul>
+
+        <h4 class="notice__heading">＜服装につきまして＞</h4>
+        <ul class="notice__list notice__list--circle">
+          <li>かぶり物、大きな帽子・髪飾り、羽や尾など、後方のお客さまの視界を遮るものは、公演中はお控えください。</li>
+          <li>着ぐるみなど動きにくい服装や、周りのお客さまに当たるおそれのある装飾でのご来場はご遠慮ください。</li>
+          <li>危険物を模した小道具の持ち込みはご遠慮ください。</li>
+          <li>会場内・周辺施設での着替えはご遠慮ください。</li>
+          <li>服装や装飾によっては、スタッフより外していただくようお願いする場合がございます。</li>
         </ul>
 
         <h4 class="notice__heading">＜その他＞</h4>
         <ul class="notice__list notice__list--circle">
           <li>出演者の入待ち・出待ち行為は禁止です。</li>
-          <li>お手紙やプレゼントにつきましては、必ず宛先(出演者名)を明記した上で、会場に設置いたします「プレゼントBOX」へお入れください。危険物/飲食物/生もの/生き物/現金などにつきましては、スタッフの判断により破棄させていただく場合がございます。いかなる場合でもいただいたプレゼントはお返し出来ませんのであらかじめご了承ください。</li>
+          <li>終演後は混雑緩和のため、エリアごとに順番にご退場をご案内する場合がございます。</li>
+          <li>お手紙やプレゼントにつきましては、必ず宛先(出演者名)を明記した上で、会場に設置いたします「プレゼントBOX」へお入れください。危険物/飲食物/生もの/生き物/現金などにつきましては、スタッフの判断により破棄させていただく場合がございます。いかなる場合でもいただいたプレゼントはお返しできませんのであらかじめご了承ください。</li>
         </ul>
 
         <ul class="notice__list">
           <li>本公演では、スタンド花の受付を行います。
             <ol class="notice__olist">
-              <li>必ずお客様ご自身で専門業者による回収までのご手配をお願いいたします。</li>
+              <li>必ずお客さまご自身で専門業者による回収までのご手配をお願いいたします。</li>
               <li>お贈りいただいたスタンド花の設置位置はご指定いただけませんのでご注意ください。</li>
-              <li>係員が動かすことのできない大きさ・構造と判断したものはお受け取りできません。</li>
-              <li>楽屋花や花束はお受け取りできませんので、予めご了承ください。</li>
+              <li>係員が動かすことのできない大きさ・構造と判断したものはお受取りできません。</li>
+              <li>楽屋花や花束はお受取りできませんので、あらかじめご了承ください。</li>
               <li>盗難・紛失等に関しての責任は一切負いかねますのでご了承ください。</li>
               <li>スタンド花は必ず以下の指定日時に到着および回収をお願いいたします。</li>
             </ol>
@@ -332,13 +341,29 @@
         <dl class="notice__dl">
           <dt>〈配達先〉</dt>
           <dd>〒182-0032 東京都調布市西町290-11　京王アリーナTOKYO ロビー行</dd>
-          <dt>到着日時</dt>
+          <dt>〈到着日時〉</dt>
           <dd>10月30日(金) 15:00〜18:00</dd>
-          <dt>回収日時</dt>
+          <dt>〈回収日時〉</dt>
           <dd>11月2日(月) 午前中</dd>
         </dl>
 
-        <p class="notice__closing">※以上の注意事項は2026年9月3日(木)時点での情報となり、公演当日までに変更になる場合がございますので、ご来場前に必ず公式サイトにてご確認ください。<br>みなさまに安心してご鑑賞いただくため、ご理解・ご協力のほどよろしくお願いいたします。</p>
+        <ul class="notice__list notice__list--circle">
+          <li>車椅子でご来場のお客さまは、事前に下記「公演に関するお問合わせ」窓口までご連絡ください。</li>
+          <li>周りのお客さまへの迷惑行為、スタッフや他のお客さまへの威圧的な言動があった場合や、係員の指示に従っていただけない場合は、公演中であっても退場措置をとらせていただく場合がございます。その場合、チケットの払戻しはいたしかねますので、あらかじめご了承いただけますと幸いです。</li>
+        </ul>
+
+        <h4 class="notice__heading">＜カスタマーハラスメントにつきまして＞</h4>
+        <p class="notice__sub">出演者・スタッフを守り、みなさまに安心してお楽しみいただくため、東京都カスタマー・ハラスメント防止条例の趣旨を踏まえて対応いたします。</p>
+        <ul class="notice__list notice__list--circle">
+          <li>出演者・スタッフ・関係者への暴言や威圧的な言動、理不尽な要求、長時間の拘束や執拗なお問合わせ、SNS等での誹謗中傷はご遠慮ください。</li>
+          <li>このような行為があった場合は、対応をお断りするほか、ご退場や今後のご来場をお断りする場合がございます。</li>
+          <li>公演や運営へのご意見は、下記お問合わせ窓口にて承ります。</li>
+        </ul>
+
+        <p class="notice__sub">＜公演に関するお問合わせ＞<br>
+        そらる Live information　<a href="https://supportform.jp/soraru-liveinfo" target="_blank" rel="noopener noreferrer" class="notice__link">https://supportform.jp/soraru-liveinfo</a></p>
+
+        <p class="notice__closing">※以上の注意事項は2026年10月27日(火)時点での情報となり、公演当日までに変更になる場合がございますので、ご来場前に必ず公式サイトにてご確認ください。<br>みなさまに安心してご鑑賞いただくため、ご理解・ご協力のほどよろしくお願いいたします。</p>
         <p class="notice__sign">SORARUライブスタッフ一同</p>
       </div>
     </div>
@@ -413,8 +438,25 @@
 <section class="section movie" id="movie">
   <div class="container">
     <h2 class="section__title"><span class="en">MOVIE</span><span class="jp">ムービー</span></h2>
-    <div class="goods__soon">
-      <p class="goods__soon-en">COMING SOON</p>
+    <div class="movie__grid">
+      <div class="movie__card">
+        <div class="movie__frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/wslDQmopVtM" title="【MV】TRICK or LOVE? / そらる" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="movie__title">【MV】TRICK or LOVE? / そらる</p>
+      </div>
+      <div class="movie__card">
+        <div class="movie__frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/TYcwMzA9vTI" title="【MV】愁いに白雨 / そらる" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="movie__title">【MV】愁いに白雨 / そらる</p>
+      </div>
+      <div class="movie__card">
+        <div class="movie__frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/vJU6er564PU" title="【MV】ハロウナイトトリップ / そらる" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="movie__title">【MV】ハロウナイトトリップ / そらる</p>
+      </div>
     </div>
   </div>
 </section>
